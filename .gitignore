@@ -1,0 +1,20 @@
+# emacs detritus
+*~
+*#
+
+# ignore output of md 
+README.html
+
+# Not sure why this showed up
+Thumbs.db
+
+# ignore output of xml2rfc conversion
+
+pdfrfc.txt
+pdfrfc.html
+pdfrfc.pdf 
+
+pdfmime.txt
+pdfmime.html
+pdfmime.pdf
+
