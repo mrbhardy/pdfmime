@@ -45,6 +45,19 @@
 				<uri>http://larry.masinter.net</uri>
 			</address>
 		</author>
+        <author initials="D." surname="Markovic" fullname="Dejan Markovic">
+            <organization>Adobe Systems</organization>
+            <address>
+                <postal>
+                    <street>345 Park Ave</street>
+                    <city>San Jose</city>
+                    <region>CA</region>
+                    <code>95110</code>
+                    <country>USA</country>
+                </postal>
+                <email>dmarkovi@adobe.com</email>
+            </address>
+        </author>
 		<author initials="D." surname="Johnson" fullname="Duff Johnson">
 			<organization>PDF Association</organization>
 			<address>
@@ -57,11 +70,24 @@
 				<email>duff.johnson@pdfa.org</email>
 			</address>
 		</author>
+		<author initials="M." surname="Bailey" fullname="Martin Bailey">
+			<organization>Global Graphics</organization>
+			<address>
+				<postal>
+					<street>2030 Cambourne Business Park</street>
+					<city>Cambridge</city>
+					<code>CB23 6DW</code>
+					<country>UK</country>
+				</postal>
+				<email>martin.bailey@globalgraphics.com</email>
+				<uri>http://www.globalgraphics.com</uri>
+			</address>
+		</author>
 		<date/>
 		<keyword>Requests for Comment</keyword>
 		<abstract>
 			<t>
-				PDF <xref target='ISOPDF'/>, the 'Portable Document Format', is an ISO standard (ISO 32000-1:2008) defining a final-form document representation language in use for document exchange, including on the Internet, since 1993.  This document provides an overview of the PDF format and updates the media type registration of 'application/pdf'.
+				The Portable Document Format (PDF) is an ISO standard (ISO 32000-1:2008) defining a final-form document representation language in use for document exchange, including on the Internet, since 1993.  This document provides an overview of the PDF format and updates the media type registration of 'application/pdf'.
 			</t>
 		</abstract>
 	</front>
@@ -71,7 +97,7 @@
 				This document is intended to provide updated information on the registration of the MIME Media Type "application/pdf" for documents defined in the PDF <xref target='ISOPDF'/>, 'Portable Document Format', syntax.  Additionally, this document provides a brief history of the PDF format, describes several of the key capabilities of the format and addresses some security concerns.
 			</t>
 			<t>
-				PDF is used widely in the Internet community.  The first version of PDF, 1.0, was published in 1993 by Adobe Systems [REF needed].  Since then PDF has grown to be a widely-used format for capturing and exchanging formatted documents electronically across the Web, via e-mail and virtually every other document exchange mechanism.  In 2008, PDF 1.7 was published as an ISO standard <xref target='ISOPDF'/>, ISO 32000-1:2008.
+				PDF is used widely in the Internet community.  The first version of PDF, 1.0, was published in 1993 by Adobe Systems [REF needed].  Since then PDF has grown to be a widely-used format for capturing and exchanging formatted documents electronically across the Web, via e-mail and virtually every other document exchange mechanism.  In 2008, PDF 1.7 was published as an ISO standard <xref target='ISOPDF'/>, ISO 32000-1:2008.  The ISO TC-171 committee is presently working on a refresh of PDF, known as ISO 32000-2, with a version of PDF 2.0, expected to be published in late 2016 or early 2017.
 			</t>
 			<t>
 				PDF represents "final form" formatted documents with a fixed layout and appearance.  PDF pages may include text, images, graphics and multimedia content such as video and audio.  PDF is also capable of containing higher level structures including annotations, bookmarks, file attachments, hyperlinks, logical structure and metadata.  A rich JavaScript model has been defined for interacting with PDF documents.
@@ -80,7 +106,7 @@
 				PDF supports encryption and digital signatures.  The encryption capability is combined with access control information to facilitate management of the functionality available to the recipient.  PDF supports the inclusion of metadata through XMP <xref target='XMP'/> metadata as well as directly via PDF structures.
 			</t>
 			<t>
-				In addition to the ISO 32000-1:2008 PDF standard, several ISO PDF subset standards have been defined to address specific use cases.  These standards include PDF for Archival (PDF/A), PDF for Engineering (PDF/E), PDF for Universal Accessibility (PDF/UA), PDF for Variable Data and Transactional Printing (PDF/VT) and PDF for Prepress Digital Data Exchange (PDF/X).  The subset standards are fully compliant PDF files capable of being displayed in a general PDF viewer.
+				In addition to the ISO 32000-1:2008 and 32000-2 PDF standards, several ISO PDF subset standards have been defined to address specific use cases.  These standards include PDF for Archival (PDF/A), PDF for Engineering (PDF/E), PDF for Universal Accessibility (PDF/UA), PDF for Variable Data and Transactional Printing (PDF/VT) and PDF for Prepress Digital Data Exchange (PDF/X).  The subset standards are fully compliant PDF files capable of being displayed in a general PDF viewer.
 			</t>
 			<t>
 				PDF usage is widespread enough for 'application/pdf' to be used in other IETF specifications. RFC 2346 <xref target='RFC2346'/> describes how to better structure PDF files for international exchange of documents where different paper sizes are used; HTTP byte range retrieval is illustrated using application/pdf (RFC 2616 <xref target='RFC2616'/>, Section 19.2); RFC 3297 <xref target='RFC3297'/> illustrates how PDF can be sent to a recipient in a way that identifies the user's ability to accept the PDF using content negotiation.
@@ -94,50 +120,129 @@
 				PDF relies on the same fundamental imaging model as the PostScript <xref target="PS"/> page description language to render complex text, images, and graphics in a device and resolution-independent manner, bringing this feature to the screen as well as the printer.  However, unlike PostScript, PDF enforces page independence, ensuring that any page in a document can render without having to render previous pages. Additionally, PDF reduces the complexity of processing content to improve performance for interactive viewing.  In addition to the rendering capabilities, PDF also includes objects, such as hypertext links and annotations, that are not part of the page itself, but are useful for navigation, building collections of related documents and for reviewing and commenting on documents.
 			</t>
 			<t>
-				The application/pdf media type was first registered in 1993 by Paul Lindner for use by the gopher protocol and was subsequently updated in 1994 by Steve Zilles.
+				Since 1994, PDF has gone through many revisions and in 2008 was first published
+			</t>
+			<t>
+				The application/pdf media type was first registered in 1993 by Paul Lindner for use by the gopher protocol and was subsequently updated in 1994 by Steve Zilles.  
+			</t>
+			<t>
+				
 			</t>
 		</section>
 		
 		<section title='Fragment Identifiers'>
 			<t>
-				A set of fragment identifiers <xref target='RFC2396'/> and their handling are defined in Adobe Technical Note 5428 <xref target="PDFOpen"/>.  This section summarizes that material.
+				A set of fragment identifiers <xref target='RFC2396'/> and their handling are defined in ISO 32000-2 <xref target="PDFOpen"/>.  This section summarizes that material.
 			</t>
 			<t>
-				A fragment identifier consists of one or more PDF-open parameters in a single URL, separated by the ampersand (&amp;) or pound (#) character. Each parameter implies an action to be performed and the value to be used for that action.  Actions are processed and executed from left to right as they appear in the character string that makes up the fragment identifier.
+                A fragment identifier is comprised of one or more parameters in a single URI, each of which is separated by the AMPERSAND (28h) or POUND (23h) character.  Each parameter implies an action to be performed on the document and provides the value to be used for that action.  Arguments to those parameters shall be COMMA (2Ch) separated when more than one is required.  Actions shall be processed and executed from left to right as they appear in the character string that makes up the fragment identifier.
 			</t>
 			<t>
-				The PDF-open parameters allow the specification of a particular page or named destination to open.  Named destinations are similar to the "anchors" used in HTML or the IDs used in XML.  Once the target is specified, the view of the page in which it occurs can be specified, either by specifying the position of a viewing rectangle and its scale or size coordinates or by specifying a view relative to the viewing window in which the chosen page is to be presented.
-			</t>
+				The fragment identifiers listed in this section operate on the document at the point it is opened.  The fragment identifiers are therefore referred to as PDF open parameters.  The fragment identifiers should be processed immediately after document-specified open parameters have been processed.
+            </t>
 			<t>
-				The list of PDF-open parameters and the action they imply is:
+                The table below lists the PDF open parameters relevant to PDF.  All coordinate values (left, right, top, and bottom) shall be expressed in the default user space coordinate system.
 			</t>
-			<t>
-				namedest=&lt;name&gt;<vspace/>
-				&nbsp;&nbsp;&nbsp;&nbsp;Open to a specified named destination (which includes a view).
-			</t>
-			<t>
-				page=&lt;pagenum&gt;<vspace/>
-				&nbsp;&nbsp;&nbsp;&nbsp;Open the specified (physical) page.
-			</t>
-			<t>
-				zoom=&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;<vspace/>
-				&nbsp;&nbsp;&nbsp;&nbsp;Set the &lt;scale&gt; and scrolling factors. &lt;left&gt;, and &lt;top&gt; are measured from the top left corner of the page, independent of the size of the page.  The pair &lt;left&gt; and &lt;top&gt; are optional but both must appear if present.
-			</t>
-			<t>
-				view=&lt;keyword&gt;,&lt;position&gt;<vspace/>
-				&nbsp;&nbsp;&nbsp;&nbsp;Set the view to show some specified portion of the page or its bounding box; keywords are defined by Table 8.2 of the PDF Reference, version 1.5 (NEEDS UPDATING TO ISO REF).  The &lt;position&gt; value is required for some of the keywords and not allowed for others.
-			</t>
-			<t>
-				viewrect=&lt;left&gt;,&lt;top&gt;,&lt;wd&gt;,&lt;ht&gt;<vspace/>
-				&nbsp;&nbsp;&nbsp;&nbsp;As with the zoom parameter, set the scale and scrolling factors, but using an explicit width and height instead of a scale percentage.
-			</t>
-			<t>
-				highlight=&lt;lt&gt;,&lt;rt&gt;,&lt;top&gt;,&lt;btm&gt;<vspace/>
-				&nbsp;&nbsp;&nbsp;&nbsp;Highlight a rectangle on the chosen page where &lt;lt&gt;, &lt;rt&gt;, &lt;top&gt;, and &lt;btm&gt; are the coordinates of the sides of the rectangle measured from the top left corner of the page.
-			</t>
-			<t>
-				All specified actions are executed in order; later actions will override the effects of previous actions; for this reason, page actions should appear before zoom actions.  Commands are not case sensitive (except for the value of a named destination).
-			</t>
+            <texttable>
+                <preamble>
+                    PDF Open Parameters
+                </preamble>
+                <ttcol>Parameter</ttcol>
+                <ttcol>Arguments</ttcol>
+                <ttcol>Description</ttcol>
+                <c>
+                    <spanx style="verb">nameddest</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">name</spanx>
+                </c>
+                <c>
+                    Open the document to the specified named destination.  The argument provided is a string which shall correspond to the name of a destination in the target document.
+                </c>
+                <c>
+                    <spanx style="verb">page</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">pageNum</spanx>
+                </c>
+                <c>
+                    Open the document to the specified page number.  The argument shall be a positive integer number.  The first page in the document has a pageNum value of 1.
+                </c>
+                <c>
+                    <spanx style="verb">zoom</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">scale
+                        scale,left,top</spanx>
+                </c>
+                <c>
+                    Open the document with the specified zoom level and optional offset.  The scale argument shall be either an integer or floating point value representing the percentage to which the document should be zoomed, where a value of 100 would correspond to a zoom of 100%.  The left and top arguments are optional, but shall both be specified if either is included.  The left and top arguments shall be integer or floating point values representing the offset from the left and top of the page in a coordinate system where 0,0 represents the top left corner of the page.
+                </c>
+                <c>
+                    <spanx style="verb">view</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">keyword,position</spanx>
+                </c>
+                <c>
+                    Open the document with the specified destination set as the view.  The arguments shall correspond to those found in 12.3.2.2, “Explicit destinations”. The keyword shall correspond to one of the keywords defined in Table 160, “Destination syntax” with appropriate position values.
+                </c>
+                <c>
+                    <spanx style="verb">viewrect</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">left,top,width,height</spanx>
+                </c>
+                <c>
+                    Open the document with the specified window view rectangle.  The left and top arguments shall be integer or floating point values representing the offset from the left and top of the page in a coordinate system where 0,0 represents the top left corner of the page.  The width and height arguments shall be integer or floating point values representing the width and height of the view.
+                </c>
+                <c>
+                    <spanx style="verb">highlight</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">left,right,top,bottom</spanx>
+                </c>
+                <c>
+                    Open the document with the specified rectangle highlighted.  Each argument shall be an integer or floating point value representing the rectangle measured from the top left corner of the page.
+                </c>
+                <c>
+                    <spanx style="verb">comment</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">commentID</spanx>
+                </c>
+                <c>
+                    Open the document with the specified comment selected.  The commentID shall be the value of an annotation name, which is defined by the NM key in the corresponding annotation dictionary (see 12.5.2 “Annotation dictionaries”, Table 167).
+                    
+                    If the comment parameter is combined with another parameter that defines a specific page to be displayed, then the comment parameter shall appear after that in the URI.
+                    
+                    Note: The NM key is unique to a specific page, but is not guaranteed to be unique to a document.  Unless the page on which the comment resides has been selected prior to the comment parameter, the comment will not be selected.
+                </c>
+                <c>
+                    <spanx style="verb">search</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">wordList</spanx>
+                </c>
+                <c>
+                    Open the document and search for one or more words, selecting the first matching word in the document.  The wordList argument defines the search words and shall be a string enclosed within quotation marks comprised of individual words separated by space characters.
+                    
+                    Note: Some browsers require that the space characters be encoded appropriately for a URI.
+                </c>
+                <c>
+                    <spanx style="verb">fdf</spanx>
+                </c>
+                <c>
+                    <spanx style="emph">URI</spanx>
+                </c>
+                <c>
+                    Open the document and then import the data from the specified FDF or XFDF file.  The URI shall be either a relative or absolute URI to an FDF or XFDF file.
+                    
+                    The fdf parameter should be specified as the last parameter to a given URI.
+                    
+                    Note: The fdf parameter is recommended to be the last parameter so that the document can open directly to the appropriate view.
+                </c>
+            </texttable>
 		</section>
 		
 		<section title='Subset Standards'>
@@ -228,9 +333,11 @@
 			<t>
 				Intended usage: COMMON
 			</t>
-			<t>
-				Author/Change controller: Duff Johnson &lt;duff.johnson@pdfa.org&gt;, Cherie Ekholm &lt;cheriee@microsoft.com&gt;, ISO 32000 Project Leaders
-			</t>
+            <t>
+                Author/Change controller:
+                ISO 32000 is by ISO/TC 171/SC 02/WG 08, "PDF specification".
+                Duff Johnson &lt;duff.johnson@pdfa.org&gt; and Cherie Ekholm &lt;cheriee@microsoft.com&gt; are current ISO 32000 Project Leaders.
+            </t>
 
 		</section>
 		
@@ -249,6 +356,19 @@
 				<seriesInfo name="ISO" value="32000-1:2008"/>
 				<annotation>Also available free from Adobe Systems.</annotation>
 			</reference>
+
+			<!-- ?rfc include='reference.ISO.32000-2' ? -->
+			<reference anchor="ISOPDF2">
+				<front>
+					<title>Document management -- Portable document format -- Part 2: PDF 2.0</title>
+					<author>
+						<organization>ISO</organization>
+					</author>
+					<date month="" year=""/>
+				</front>
+				<seriesInfo name="ISO" value="32000-2"/>
+			</reference>
+
 
 			<!-- rfc include='reference.ISO.16684-1.2012' XMP -->
 			<reference anchor="XMP">
@@ -299,5 +419,11 @@
 			<?rfc include='reference.RFC.2616' ?>
 			<?rfc include='reference.RFC.3297' ?>
 		</references>
+        
+        <section title='Changes since RFC 3778'>
+            <t>The Change Controller has changed from Adobe to ISO.</t>
+            <t>The section on Fragment identifiers has been taken up by
+                the ISO PDF specification, ISO-32000-2. </t>
+        </section>
 	</back>
 </rfc>
