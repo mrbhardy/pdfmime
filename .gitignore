@@ -10,11 +10,12 @@ Thumbs.db
 
 # ignore output of xml2rfc conversion
 
-pdfrfc.txt
-pdfrfc.html
-pdfrfc.pdf 
-
 pdfmime.txt
 pdfmime.html
 pdfmime.pdf
+
+# interim merge
+
+pdfmime-new.xml
+pdfmime-old.xml
 
