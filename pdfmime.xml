@@ -10,12 +10,12 @@
 <?rfc inline='yes'?>
 <?rfc-ext parse-xml-in-artwork='yes' ?>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-<rfc docName="draft-hardy-app-pdf-media-type-01" category="info">
+<rfc docName="draft-hardy-pdf-mime-01" category="info" obsoletes='3778'>
   <front>
-    <title abbrev="PDF for RFCs">The application/pdf Media
+    <title abbrev="application/pdf">The application/pdf Media
     Type</title>
     <author initials="M." surname="Hardy" fullname="Matthew Hardy">
-      <organization>Adobe Systems</organization>
+      <organization>Adobe</organization>
       <address>
 	<postal>
 	  <street>345 Park Ave</street>
@@ -28,7 +28,7 @@
       </address>
     </author>
     <author initials="L." surname="Masinter" fullname="Larry Masinter">
-      <organization>Adobe Systems</organization>
+      <organization>Adobe</organization>
       <address>
 	<postal>
 	  <street>345 Park Ave</street>
@@ -113,7 +113,8 @@
 	e-mail and virtually every other document exchange
 	mechanism.  In 2008, PDF 1.7 was published as an ISO
 	standard <xref target='ISOPDF'/>, ISO 32000-1:2008.
-
+      </t>
+      <t>
 	The ISO TC-171 committee is presently working on a
 	refresh of PDF, known as ISO 32000-2, with a version
 	of PDF 2.0, expected to be published in late 2016 or
@@ -187,18 +188,6 @@
 	collections of related documents and for reviewing and
 	commenting on documents.
       </t>
-      <t>
-	Since 1994, PDF has gone through many revisions and in
-	2008 was first published
-      </t>
-      <t>
-	The application/pdf media type was first registered in
-	1993 by Paul Lindner for use by the gopher protocol and
-	was subsequently updated in 1994 by Steve Zilles.
-      </t>
-      <t>
-	
-      </t>
     </section>
     
     <section title='Fragment Identifiers'>
@@ -211,11 +200,11 @@
       <t>
         A fragment identifier is comprised of one or more
         parameters in a single URI, each of which is separated
-        by the AMPERSAND (28h) or POUND (23h) character.  Each
+        by the AMPERSAND (&amp;) or POUND (#) character.  Each
         parameter implies an action to be performed on the
         document and provides the value to be used for that
-        action.  Arguments to those parameters shall be COMMA
-        (2Ch) separated when more than one is required.
+        action.  Arguments to those parameters are COMMA
+        (,) separated when more than one is required.
         Actions shall be processed and executed from left to
         right as they appear in the character string that
         makes up the fragment identifier.
@@ -392,12 +381,6 @@
       <t>
 	TODO: Describe the subset standards, their history and
 	include references to the ISO documents.
-      </t>
-    </section>
-    
-    <section title='Accessibility for PDF'>
-      <t>
-	TODO: Describe the Accessibility capabilities of PDF.
       </t>
     </section>
     
