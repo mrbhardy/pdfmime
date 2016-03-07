@@ -16,6 +16,6 @@ pdfmime.pdf
 
 # interim merge
 
-pdfmime-new.xml
-pdfmime-old.xml
+pdfmime-*.xml
+
 
