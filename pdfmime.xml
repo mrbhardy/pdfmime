@@ -42,7 +42,7 @@
       </address>
     </author>
     <author initials="D." surname="Markovic" fullname="Dejan Markovic">
-      <organization>Adobe Systems</organization>
+      <organization>Adobe</organization>
       <address>
         <postal>
           <street>345 Park Ave</street>
@@ -88,7 +88,7 @@
 	language in use for document exchange, including on the
 	Internet, since 1993.  This document provides an overview of
 	the PDF format and updates the media type registration of
-	'application/pdf'.
+	<spanx style="verb">application/pdf</spanx>.
       </t>
     </abstract>
   </front>
@@ -97,8 +97,8 @@
       <t>
 	This document is intended to provide updated information
 	on the registration of the MIME Media Type
-	"application/pdf" for documents defined in the PDF <xref
-	target='ISOPDF'/>, 'Portable Document Format', syntax.
+	<spanx style="verb">application/pdf</spanx> for documents defined in the PDF <xref
+	target='ISOPDF'/>, "Portable Document Format", syntax.
 	Additionally, this document provides a brief history of
 	the PDF format, describes several of the key
 	capabilities of the format and addresses some security
@@ -151,12 +151,12 @@
 	displayed in a general PDF viewer.
       </t>
       <t>
-	PDF usage is widespread enough for 'application/pdf' to
+	PDF usage is widespread enough for <spanx style="verb">application/pdf</spanx> to
 	be used in other IETF specifications. RFC 2346 <xref
 	target='RFC2346'/> describes how to better structure PDF
 	files for international exchange of documents where
 	different paper sizes are used; HTTP byte range
-	retrieval is illustrated using application/pdf (RFC 2616
+	retrieval is illustrated using <spanx style="verb">application/pdf</spanx> (RFC 2616
 	<xref target='RFC2616'/>, Section 19.2); RFC 3297 <xref
 	target='RFC3297'/> illustrates how PDF can be sent to a
 	recipient in a way that identifies the user's ability to
@@ -282,10 +282,10 @@
         <c>
           Open the document with the specified destination set
           as the view.  The arguments shall correspond to
-          those found in 12.3.2.2, “Explicit
-          destinations”. The keyword shall correspond to one
-          of the keywords defined in Table 160, “Destination
-          syntax” with appropriate position values.
+          those found in 12.3.2.2, "Explicit
+          destinations". The keyword shall correspond to one
+          of the keywords defined in Table 160, "Destination
+          syntax" with appropriate position values.
         </c>
         <c>
           <spanx style="verb">viewrect</spanx>
@@ -326,7 +326,7 @@
           selected.  The commentID shall be the value of an
           annotation name, which is defined by the NM key in
           the corresponding annotation dictionary (see 12.5.2
-          “Annotation dictionaries”, Table 167).
+          "Annotation dictionaries", Table 167).
           
           If the comment parameter is combined with another
           parameter that defines a specific page to be
@@ -405,7 +405,7 @@
 	TODO: Clean up of this section is still required...
       </t>
       <t>
-	An "application/pdf" resource contains information to be
+	An <spanx style="verb">application/pdf</spanx> resource contains information to be
 	parsed and processed by the recipient's PDF system.
 	Because PDF is both a representation of formatted
 	documents and a container system for the resources need
@@ -417,7 +417,7 @@
 	Although it is not a defined feature of PDF, a PDF
 	processor could extract these resources and store them
 	on the recipients system.  Furthermore, a PDF processor
-	may accept and execute "plug-in" modules accessible to
+	may accept and execute plug-in modules accessible to
 	the recipient.  These may also access material in the
 	PDF file or on the recipients system.  Therefore, care
 	in establishing the source, security, and reliability of
@@ -429,7 +429,7 @@
 	not present a security threat.
       </t>
       <t>
-	PDF may contain "scripts" to customize the displaying
+	PDF may contain scripts to customize the displaying
 	and processing of PDF files.  These scripts are
 	expressed in a version of JavaScript.  They are intended
 	for execution by the PDF processor.  User agents
@@ -453,7 +453,7 @@
     <section title='IANA Considerations'>
       <t>
 	This document updates the registration
-	of 'application/pdf', a media type
+	of <spanx style="verb">application/pdf</spanx>, a media type
 	registration as defined in
 	Multipurpose Internet Mail Extensions
 	MIME) Part Four: Registration
@@ -495,7 +495,7 @@
       </t>
       <t>
 	Magic number(s): All PDF files start with the characters
-	'%PDF-' using the PDF version number, e.g., '%PDF-1.7'.
+	'%PDF-' using the PDF version number, e.g., "%PDF-1.7".
 	These characters are in US-ASCII encoding.
       </t>
       <t>
