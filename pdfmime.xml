@@ -99,15 +99,60 @@
 	on the registration of the MIME Media Type
 	<spanx style="verb">application/pdf</spanx> for documents defined in the PDF <xref
 	target='ISOPDF'/>, "Portable Document Format", syntax.
-	Additionally, this document provides a brief history of
-	the PDF format, describes several of the key
-	capabilities of the format and addresses some security
-	concerns.
       </t>
+      <t>
+	PDF was originally envisioned as a way to communicate
+	and view printed information electronically across a
+	wide variety of machine configurations, operating
+	systems, and communication networks in a reliable
+	manner.
+      </t>
+
+      <t>
+	PDF is used to represent "final form" formatted documents,
+	with a
+	fixed layout and appearance.  PDF pages may include
+	text, images, graphics and multimedia content such as
+	video and audio.  PDF is also capable of containing
+	higher level structures including annotations,
+	bookmarks, file attachments, hyperlinks, logical
+	structure and metadata.  A rich JavaScript model has
+	been defined for interacting with PDF documents.
+      </t>
+
+      <t>
+	PDF relies on the same fundamental imaging model as the
+	PostScript <xref target="PS"/> page description language
+	to render complex text, images, and graphics in a device
+	and resolution-independent manner. 
+      </t>
+
+      <t>
+	PDF supports encryption and digital signatures.  The
+	encryption capability is combined with access control
+	information to facilitate management of the
+	functionality available to the recipient.  PDF supports
+	the inclusion of metadata through XMP <xref
+	target='XMP'/> metadata as well as directly via PDF
+	structures.
+      </t>
+      <t>
+	Additionally, PDF reduces the
+	complexity of processing content to improve performance
+	for interactive viewing.  In addition to the rendering
+	capabilities, PDF also includes objects, such as
+	hypertext links and annotations, that are not part of
+	the page itself, but are useful for navigation, building
+	collections of related documents and for reviewing and
+	commenting on documents.
+      </t>
+
+    </section>
+    <section title='History'>
       <t>
 	PDF is used widely in the Internet community.  The first
 	version of PDF, 1.0, was published in 1993 by Adobe
-	Systems [REF needed].  Since then PDF has grown to be a
+	Systems.  Since then PDF has grown to be a
 	widely-used format for capturing and exchanging
 	formatted documents electronically across the Web, via
 	e-mail and virtually every other document exchange
@@ -121,25 +166,6 @@
 	early 2017.
       </t>
       <t>
-	PDF represents "final form" formatted documents with a
-	fixed layout and appearance.  PDF pages may include
-	text, images, graphics and multimedia content such as
-	video and audio.  PDF is also capable of containing
-	higher level structures including annotations,
-	bookmarks, file attachments, hyperlinks, logical
-	structure and metadata.  A rich JavaScript model has
-	been defined for interacting with PDF documents.
-      </t>
-      <t>
-	PDF supports encryption and digital signatures.  The
-	encryption capability is combined with access control
-	information to facilitate management of the
-	functionality available to the recipient.  PDF supports
-	the inclusion of metadata through XMP <xref
-	target='XMP'/> metadata as well as directly via PDF
-	structures.
-      </t>
-      <t>
 	In addition to the ISO 32000-1:2008 and 32000-2 PDF standards,
 	several ISO PDF subset standards have been defined to
 	address specific use cases.  These standards include PDF
@@ -150,46 +176,14 @@
 	standards are fully compliant PDF files capable of being
 	displayed in a general PDF viewer.
       </t>
-      <t>
-	PDF usage is widespread enough for <spanx style="verb">application/pdf</spanx> to
-	be used in other IETF specifications. RFC 2346 <xref
-	target='RFC2346'/> describes how to better structure PDF
-	files for international exchange of documents where
-	different paper sizes are used; HTTP byte range
-	retrieval is illustrated using <spanx style="verb">application/pdf</spanx> (RFC 2616
-	<xref target='RFC2616'/>, Section 19.2); RFC 3297 <xref
-	target='RFC3297'/> illustrates how PDF can be sent to a
-	recipient in a way that identifies the user's ability to
-	accept the PDF using content negotiation.
+
+      <t>PDF implementations have also progressed in recent
+      years; for most of the common platforms in use (iOS, OS X, Windows,
+      Android, ChromeOS, Kindle) and for most browsers (Edge, Safari,
+      Chrome, Firefox), PDF viewing is built in. In addition there are
+      many PDF viewers available for download and install.
       </t>
     </section>
-    <section title='History'>
-      <t>
-	PDF was originally envisioned as a way to communicate
-	and view printed information electronically across a
-	wide variety of machine configurations, operating
-	systems, and communication networks in a reliable
-	manner.
-      </t>
-      <t>
-	PDF relies on the same fundamental imaging model as the
-	PostScript <xref target="PS"/> page description language
-	to render complex text, images, and graphics in a device
-	and resolution-independent manner, bringing this feature
-	to the screen as well as the printer.  However, unlike
-	PostScript, PDF enforces page independence, ensuring
-	that any page in a document can render without having to
-	render previous pages. Additionally, PDF reduces the
-	complexity of processing content to improve performance
-	for interactive viewing.  In addition to the rendering
-	capabilities, PDF also includes objects, such as
-	hypertext links and annotations, that are not part of
-	the page itself, but are useful for navigation, building
-	collections of related documents and for reviewing and
-	commenting on documents.
-      </t>
-    </section>
-    
     <section title='Fragment Identifiers'>
       <t>
 	A set of fragment identifiers <xref target='RFC2396'/>
