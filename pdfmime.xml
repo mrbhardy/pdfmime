@@ -184,7 +184,7 @@
       many PDF viewers available for download and install.
       </t>
     </section>
-    <section title='Fragment Identifiers'>
+    <section title='Fragment Identifiers' anchor='fragments'>
       <t>
 	A set of fragment identifiers <xref target='RFC2396'/>
 	and their handling are defined in ISO 32000-2 <xref
@@ -448,16 +448,13 @@
       <t>
 	This document updates the registration
 	of <spanx style="verb">application/pdf</spanx>, a media type
-	registration as defined in
-	Multipurpose Internet Mail Extensions
-	MIME) Part Four: Registration
-	Procedures <xref target='RFC2048'/>:
+	registration as defined in <xref target='RFC6838'/>:
       </t>
       <t>
-	MIME media type name: application
+	Type name: application
       </t>
       <t>
-	MIME subtype name: pdf
+	Subtype name: pdf
       </t>
       <t>
 	Required parameters: none
@@ -466,7 +463,7 @@
 	Optional parameter: none
       </t>
       <t>
-	Encoding considerations: PDF files frequently contain binary data, and thus must be encoded in non-binary contexts.
+	Encoding considerations: binary
       </t>
       <t>
 	Security considerations: See <xref target='security'/>
@@ -485,30 +482,41 @@
 	target='compat'/> of this document.
       </t>
       <t>
+	Fragment identifier considerations: See <xref
+	target='fragments'/> of this document.
+      </t>
+      <t>
 	Additional information:
       </t>
       <t>
+	Deprecated alias names for this type: none
+      </t>
+      <t>
 	Magic number(s): All PDF files start with the characters
-	'%PDF-' using the PDF version number, e.g., "%PDF-1.7".
+	'%PDF-' followed by the PDF version number, e.g., "%PDF-1.7".
 	These characters are in US-ASCII encoding.
       </t>
       <t>
 	File extension(s): .pdf
       </t>
       <t>
-	Macintosh File Type Code(s): "PDF "
+	Macintosh file type code(s): "PDF "
       </t>
       <t>
-	For further information: Duff Johnson &lt;duff.johnson@pdfa.org&gt;, Cherie Ekholm &lt;cheriee@microsoft.com&gt;, ISO 32000 Project Leaders
+	Person &amp; email address to  contact for further information: Duff Johnson &lt;duff.johnson@pdfa.org&gt;, Cherie Ekholm &lt;cheriee@microsoft.com&gt;, ISO 32000 Project Leaders
       </t>
       <t>
 	Intended usage: COMMON
+      </t>
+      <t>
+	Restrictions on usage: none
       </t>
       <t>
         Author/Change controller:
 	ISO 32000 is by ISO/TC 171/SC 02/WG 08, "PDF specification".
         Duff Johnson &lt;duff.johnson@pdfa.org&gt; and Cherie Ekholm &lt;cheriee@microsoft.com&gt; are current ISO 32000 Project Leaders.
       </t>
+      
     </section>
   </middle>
   <back>
@@ -584,7 +592,7 @@
 	</annotation>	
       </reference>
       
-      <?rfc include='reference.RFC.2048' ?>
+      <?rfc include='reference.RFC.6838' ?>
       <?rfc include='reference.RFC.2346' ?>
       <?rfc include='reference.RFC.2396' ?>
       <?rfc include='reference.RFC.2616' ?>

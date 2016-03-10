@@ -18,7 +18,7 @@ Be sure to update the file version number in the xml file before submitting.
 ## Viewer
 
 Best if you use xml2rfc but here are links that will convert the
-latest master branch:
+latest 'develop' branch:
 
 * [pdfmime to HTML](http://xml2rfc.tools.ietf.org/cgi-bin/xml2rfc.cgi?url=https://raw.githubusercontent.com/mrbhardy/pdfmime/develop/pdfmime.xml&modeAsFormat=html/ascii&type=ascii)
 * [To PDF via HTML](http://xml2rfc.tools.ietf.org/cgi-bin/xml2rfc.cgi?url=https://raw.githubusercontent.com/mrbhardy/pdfmime/develop/pdfmime.xml&modeAsFormat=html/pdf&type=ascii). Note this conversion doesn't meet many of the proposed requirements.
