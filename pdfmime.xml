@@ -373,8 +373,47 @@
     
     <section title='Subset Standards'>
       <t>
-	TODO: Describe the subset standards, their history and
-	include references to the ISO documents.
+          Several subsets of PDF specification have become separate ISO standards:
+          <list style="symbols">
+              <t>
+                  PDF/X, initially released in 2001, specifies
+                  how to use PDF for graphics exchange, with the aim to fascilitate
+                  correct and predictable printing by print service providers. The
+                  standard has gone through multiple revisions over the years and has
+                  several published parts, the most recently released one being part 8
+                  <xref target='ISOPDFX'/>, specifying different levels of conformance:
+                  PDF/X-1a:2001, PDF/X-3:2002, PDF/X-1a:2003, PDF/X-3:2003, PDF/X-4,
+                  PDF/X-4p, PDF/X-5, PDF/X-5g, PDF/X-5pg and PDF/X-5n.
+              </t>
+              <t>
+                  PDF/A, initially released in 2005, specifies how to use PDF for long-term
+                  preservation (archiving) of electronic documents. It prohibits PDF features
+                  which are not well suited to long term archiving of documents. Its
+                  requirements for PDF/A viewers include color management guidelines and
+                  support for embedded fonts. There are three parts of this standard, the
+                  most recent one being part 3 <xref target='ISOPDFA'/>, specifying several
+                  different conformance levels: PDF/A-1a, PDF/A-1b, PDF/A-2a, PDF/A-2b,
+                  PDF/A-2u, PDF/A-3a, PDF/A-3b and PDF/A-3u.
+              </t>
+              <t>
+                  PDF/E, initially released in 2008 as PDF/E-1 <xref target='ISOPDFE'/>,
+                  specifies how to use PDF in engineering workflows, such as manufacturing,
+                  construction and geospatial analysis. Future revisions of PDF/E are
+                  supposed to include support for 3D PDF workflows.
+              </t>
+              <t>
+                  PDF/VT, initially released in 2010, specifies how to use PDF in variable
+                  and transactional printing. It is based on PDF/X, and adds adidtional
+                  restrictions on PDF content elements and supporting metadata. It specifies
+                  three conformance levels: PDF/VT-1, PDF/VT-2 and PDF/VT-2s <xref target='ISOPDFVT'/>.
+              </t>
+              <t>
+                  PDF/UA, initially released in 2012 as PDF/UA-1 <xref target='ISOPDFUA'/>,
+                  specifies how to create accessible electonic documents. It generally
+                  requires use of tagged PDF feature and adds many requirements regarding
+                  semantic corectness of the tags used.
+              </t>
+          </list>
       </t>
     </section>
     
@@ -546,6 +585,66 @@
 	<seriesInfo name="ISO" value="32000-2"/>
       </reference>
       
+      <reference anchor="ISOPDFX">
+          <front>
+              <title>Graphic technology -- Prepress digital data exchange using PDF --
+                  Part 8: Partial exchange of printing data using PDF 1.6 (PDF/X-5)
+              </title>
+              <author>
+                  <organization>ISO</organization>
+              </author>
+              <date month="" year="2008"/>
+          </front>
+          <seriesInfo name="ISO" value="15930-8:2008"/>
+      </reference>
+      <reference anchor="ISOPDFA">
+          <front>
+              <title>Document management -- Electronic document file format for long-term preservation
+                  -- Part 3: Use of ISO 32000-1 with support for embedded files (PDF/A-3)
+              </title>
+              <author>
+                  <organization>ISO</organization>
+              </author>
+              <date month="" year="2012"/>
+          </front>
+          <seriesInfo name="ISO" value="19005-3:2012"/>
+      </reference>
+      <reference anchor="ISOPDFE">
+          <front>
+              <title>Document management -- Engineering document format using PDF -- Part 1:
+                  Use of PDF 1.6 (PDF/E-1)
+              </title>
+              <author>
+                  <organization>ISO</organization>
+              </author>
+              <date month="" year="2008"/>
+          </front>
+          <seriesInfo name="ISO" value="24517-1:2008"/>
+      </reference>
+      <reference anchor="ISOPDFVT">
+          <front>
+              <title>Graphic technology -- Variable data exchange -- Part 2:
+                  Using PDF/X-4 and PDF/X-5 (PDF/VT-1 and PDF/VT-2)
+              </title>
+              <author>
+                  <organization>ISO</organization>
+              </author>
+              <date month="" year="2010"/>
+          </front>
+          <seriesInfo name="ISO" value="16612-2:2010"/>
+      </reference>
+      <reference anchor="ISOPDFUA">
+          <front>
+              <title>Document management applications -- Electronic document file format enhancement
+                    for accessibility -- Part 1: Use of ISO 32000-1 (PDF/UA-1)
+              </title>
+              <author>
+                  <organization>ISO</organization>
+              </author>
+              <date month="" year="2014"/>
+          </front>
+          <seriesInfo name="ISO" value="14289-1:2014"/>
+      </reference>
       
       <!-- rfc include='reference.ISO.16684-1.2012' XMP -->
       <reference anchor="XMP">
