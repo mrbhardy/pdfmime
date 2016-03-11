@@ -599,9 +599,37 @@
       <?rfc include='reference.RFC.3297' ?>
     </references>
     <section title='Changes since RFC 3778'>
-      <t>The Change Controller has changed from Adobe to ISO.</t>
-      <t>The section on Fragment identifiers has been taken up by
-      the ISO PDF specification, ISO-32000-2. </t>
+      <t>
+	This specification replaces RFC 3778, which previously
+	defined the <spanx style="verb">application/pdf</spanx>
+	Media Type. Differences include:
+      </t>
+      <t>
+	To reflect the transition from a proprietary specification by
+	Adobe to an open ISO Standard, the Change Controller has
+	changed from Adobe to ISO, and references updated.
+      </t>
+      <t>
+	The overview of PDF capabilitiies, the history of PDF,
+	and the descriptions of PDF subsets were updated
+	to reflect more recent relevant history.
+      </t>
+      <t>
+	The section on Fragment identifiers was updated to
+	closely reflect the material which has been added
+	to ISO-32000-2.
+      </t>
+      <t>
+	The status of popular PDF impelementations was
+	updatd.
+      </t>
+      <t>
+	The Security Considerations were updated to match
+	current status.
+      </t>
+      <t>
+	The registration template waws updated to match RFC 2048.
+      </t>
     </section>
 
   </back>
