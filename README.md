@@ -2,7 +2,7 @@
 
 'pdfmime' is a proposed update to RFC 3778 that registers the
 application/pdf MIME type.
-It was originally a parrt of the masinter/pdfrfc project.
+It was originally a part of the masinter/pdfrfc project.
 
 ## Creating Internet Drafts
 
