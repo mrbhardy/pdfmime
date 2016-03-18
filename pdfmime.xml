@@ -109,9 +109,8 @@
       </t>
 
       <t>
-	PDF is used to represent "final form" formatted documents,
-	with a
-	fixed layout and appearance.  PDF pages may include
+	PDF is used to represent "final form" formatted documents.
+	PDF pages may include
 	text, images, graphics and multimedia content such as
 	video and audio.  PDF is also capable of containing
 	higher level structures including annotations,
@@ -429,57 +428,39 @@
 	standardization of PDF.
       </t>
       <t>
-	TODO: Update the above list to ensure relevance to
-	update market conditions...
+	Wikipedia has a <eref target="https://en.wikipedia.org/wiki/List_of_PDF_software">page</eref>
+    with a constantly evolving list of PDF software implementations.
       </t>
     </section>
     <section anchor='security' title='Security Considerations'>
       <t>
-	TODO: Clean up of this section is still required...
+          PDF file format allows several constructs which may compromise security if handled
+          inadequatly by PDF processor. For example:
+          <list style="symbols">
+              <t>
+                  PDF may contain scripts to customize the displaying and processing
+                  of PDF files. These scripts are expressed in a version of JavaScript.
+                  They are intended for execution by the PDF processor.
+              </t>
+              <t>
+                  PDF file may refer to other PDF files for portions of its content (also
+                  known as reference XObjects). PDF processor is expected to find these
+                  external files and load them in order to display the document.
+              </t>
+              <t>
+                  PDF may act as a container for various files embedded in it (for example,
+                  as attached files). PDF processor may offer functionality to open and
+                  display such files or store them on the system.
+              </t>
+              <t>
+                  PDF files may contain live links to content on the internet. PDF processor
+                  may offer functionality to show such content upon following the link.
+              </t>
+          </list>
       </t>
       <t>
-	An <spanx style="verb">application/pdf</spanx> resource contains information to be
-	parsed and processed by the recipient's PDF system.
-	Because PDF is both a representation of formatted
-	documents and a container system for the resources need
-	to reproduce or view said documents, it is possible that
-	a PDF file has embedded resources not described in the
-	PDF Reference.
-      </t>
-      <t>
-	Although it is not a defined feature of PDF, a PDF
-	processor could extract these resources and store them
-	on the recipients system.  Furthermore, a PDF processor
-	may accept and execute plug-in modules accessible to
-	the recipient.  These may also access material in the
-	PDF file or on the recipients system.  Therefore, care
-	in establishing the source, security, and reliability of
-	such plug-ins is recommended.  Message-sending software
-	should not make use of arbitrary plug-ins without prior
-	agreement on their presence at the intended recipients.
-	Message-receiving and -displaying software should make
-	sure that any non-standard plug-ins are secure and do
-	not present a security threat.
-      </t>
-      <t>
-	PDF may contain scripts to customize the displaying
-	and processing of PDF files.  These scripts are
-	expressed in a version of JavaScript.  They are intended
-	for execution by the PDF processor.  User agents
-	executing such scripts or programs must be extremely
-	careful to insure that untrusted software is executed in
-	a protected environment.
-      </t>
-      <t>
-	In general, any information stored outside of the direct
-	control of the user -- including referenced application
-	software or plug-ins and embedded files, scripts or
-	other material not covered in the PDF Reference -- can
-	be a source of insecurity, by either obvious or subtle
-	means.  For example, a script can modify the content of
-	a document prior to its being displayed.  Thus, the
-	security of any PDF document may be dependent on the
-	resources referenced by that document.
+          In addition, PDF processor itself, as well as its plugins, scripts etc. may be a
+          source of insecurity, by either obvious or subtle means.
       </t>
     </section>
     
