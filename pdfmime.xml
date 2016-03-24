@@ -429,18 +429,19 @@
     
     <section anchor='compat' title='PDF Implementations'>
       <t>
-	There are a number of widely available, independently
-	implemented, interoperable implementations of PDF for a wide
-	variety of platforms and systems.  Since the PDF specification
-	was published and freely available since the format was
-	introduced in 1993, hundreds of companies and organizations,
-	including web-browser developers, make PDF creation, viewing,
-	and manipulation tools for many years prior to ISO
-	standardization of PDF.
+          PDF format has gone through several revisions, primarily for the addition of features.
+          PDF features have generally been added in a way that older viewers 'fail gracefully'
+          because they can just ignore features they do not recognize, but even so, the older the
+          PDF version produced, the more legacy viewers will support that version, but the fewer
+          features will be enabled.
       </t>
       <t>
-	Wikipedia has a <eref target="https://en.wikipedia.org/wiki/List_of_PDF_software">page</eref>
-    with a constantly evolving list of PDF software implementations.
+          As with most file formats, PDF files are experienced through a reader or viewer of PDF files.
+          For most of the common platforms in use (iOS, OS X, Windows, Android, ChromeOS, Kindle)
+          and for most browsers (Edge, Safari, Chrome,	Firefox), PDF viewing is built in. In addition,
+          there are	many PDF viewers available for download and install. The PDF specification
+          was published and freely available since the format was introduced in 1993, so hundreds
+          of companies and organizations make tools for PDF creation, viewing, and manipulation.
       </t>
     </section>
     <section anchor='security' title='Security Considerations'>
@@ -506,7 +507,7 @@
       </t>
       <t>
 	Published specification: ISO 32000-1:2008 (PDF 1.7)
-	<xref target='ISOPDF'/>.
+	<xref target='ISOPDF'/>. ISO 32000-2 (PDF 2.0) <xref target='ISOPDF2'/> is currently under development.
       </t>
       <t>
 	Applications which use this media type: See <xref
@@ -575,6 +576,7 @@
 	  <date month="" year=""/>
 	</front>
 	<seriesInfo name="ISO" value="32000-2"/>
+    <annotation>Currently under development - publication expected in 2017.</annotation>
       </reference>
       
       <reference anchor="ISOPDFX">
