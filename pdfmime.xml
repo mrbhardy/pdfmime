@@ -414,6 +414,17 @@
               </t>
           </list>
       </t>
+      <t>
+          All of these subset standards use <spanx style="verb">application/pdf</spanx> media type.
+          The subset standards are not exclusive, so it is possible to construct a PDF file which
+          conforms to, for example, both PDF/A-2b and PDF/X-4 subset standards.
+      </t>
+      <t>
+          PDF documents claiming conformance to one or more of the subset standards use document
+          metadata stream to identify levels of conformance. PDF processors should examine document
+          metadata stream for such subset standards identifiers and, if apropriate, label
+          documents as such when presenting them to the user.
+      </t>
     </section>
     
     <section anchor='compat' title='PDF Implementations'>
