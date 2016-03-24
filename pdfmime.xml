@@ -185,7 +185,7 @@
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
-	A set of fragment identifiers <xref target='RFC2396'/>
+	A set of fragment identifiers <xref target='RFC3986'/>
 	and their handling are defined in ISO 32000-2 <xref
 	target="PDFOpen"/>.  This section summarizes that
 	material.
@@ -275,10 +275,11 @@
         <c>
           Open the document with the specified destination set
           as the view.  The arguments shall correspond to
-          those found in 12.3.2.2, "Explicit
-          destinations". The keyword shall correspond to one
-          of the keywords defined in Table 160, "Destination
-          syntax" with appropriate position values.
+          those found in <xref target='ISOPDF2'/> 12.3.2.2,
+          "Explicit destinations". The keyword shall correspond
+          to one of the keywords defined in <xref target='ISOPDF2'/>
+          Table 149, "Destination syntax" with appropriate position
+          values.
         </c>
         <c>
           <spanx style="verb">viewrect</spanx>
@@ -686,10 +687,7 @@
       </reference>
       
       <?rfc include='reference.RFC.6838' ?>
-      <?rfc include='reference.RFC.2346' ?>
-      <?rfc include='reference.RFC.2396' ?>
-      <?rfc include='reference.RFC.2616' ?>
-      <?rfc include='reference.RFC.3297' ?>
+      <?rfc include='reference.RFC.3986' ?>
     </references>
     <section title='Changes since RFC 3778'>
       <t>
