@@ -187,7 +187,7 @@
       <t>
 	A set of fragment identifiers <xref target='RFC3986'/>
 	and their handling are defined in ISO 32000-2 <xref
-	target="PDFOpen"/>.  This section summarizes that
+	target="ISOPDF2"/>.  This section summarizes that
 	material.
       </t>
       <t>
@@ -669,20 +669,6 @@
 	</front>
 	<annotation>Available at: 
 	<eref target="http://partners.adobe.com/public/developer/en/ps/PLRM.pdf"/>
-	</annotation>	
-      </reference>
-      
-      <reference anchor="PDFOpen">
-	<front>
-	  <title>PDF Open Parameters</title>
-	  <author>
-	    <organization>Adobe Systems Incorporated</organization>
-	  </author>
-	  <date month="May" year="2003"/>
-	</front>
-	<seriesInfo name="Technical Note" value="5428"/>
-	<annotation>Available at: 
-	<eref target="http://partners.adobe.com/asn/acrobat/sdk/public/docs/PDFOpenParams.pdf"/>
 	</annotation>	
       </reference>
       
