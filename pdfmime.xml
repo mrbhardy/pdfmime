@@ -175,13 +175,6 @@
 	standards are fully compliant PDF files capable of being
 	displayed in a general PDF viewer.
       </t>
-
-      <t>PDF implementations have also progressed in recent
-      years; for most of the common platforms in use (iOS, OS X, Windows,
-      Android, ChromeOS, Kindle) and for most browsers (Edge, Safari,
-      Chrome, Firefox), PDF viewing is built in. In addition there are
-      many PDF viewers available for download and install.
-      </t>
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
