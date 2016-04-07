@@ -121,7 +121,7 @@
       </t>
 
       <t>
-	PDF relies on the same fundamental imaging model as the
+	PDF used the imaging model of the
 	PostScript <xref target="PS"/> page description language
 	to render complex text, images, and graphics in a device
 	and resolution-independent manner. 
@@ -181,25 +181,30 @@
 	A set of fragment identifiers <xref target='RFC3986'/>
 	and their handling are defined in ISO 32000-2 <xref
 	target="ISOPDF2"/>.  This section summarizes that
-	material.
+	material. 
       </t>
       <t>
         A fragment identifier is comprised of one or more
-        parameters in a single URI, each of which is separated
-        by the AMPERSAND (&amp;) or POUND (#) character.  Each
+        parameters separated
+        by the AMPERSAND (&amp;)  character.  Each
         parameter implies an action to be performed on the
-        document and provides the value to be used for that
-        action.  Arguments to those parameters are COMMA
-        (,) separated when more than one is required.
+        document and provides values to be used for that
+        action; the values for a parameter are introduced
+        by an EQUAL SIGN (=) and separated by a COMMA (,);
+	values which are strings appear in the fragment
+	identifier using URI's percent-hex escaping --
+	spaces, reserved and non-ASCII strings are 
+	included by %nn encoding the UTF-8 of each character.
+
         Actions shall be processed and executed from left to
         right as they appear in the character string that
         makes up the fragment identifier.
       </t>
       <t>
-	The fragment identifiers listed in this section
-	operate on the document at the point it is opened.
-	The fragment identifiers are therefore referred to as
-	PDF open parameters.  The fragment identifiers should
+	The parameters listed in this section
+	operate on the document at the point it is opened;
+	for this reason they are sometimes referred to as
+	PDF open parameters.  The fragment identifier should
 	be processed immediately after document-specified open
 	parameters have been processed.
       </t>
@@ -213,7 +218,7 @@
         <preamble>
           PDF Open Parameters
         </preamble>
-        <ttcol>Parameter</ttcol>
+        <ttcol>Parameter Name</ttcol>
         <ttcol>Arguments</ttcol>
         <ttcol>Description</ttcol>
         <c>
@@ -340,8 +345,7 @@
           comprised of individual words separated by space
           characters.
           
-          Note: Some browsers require that the space
-          characters be encoded appropriately for a URI.
+          Note that the space characters must be encoded.
         </c>
         <c>
           <spanx style="verb">fdf</spanx>
@@ -714,7 +718,7 @@
 	current status.
       </t>
       <t>
-	The registration template waws updated to match RFC 2048.
+	The registration template was updated to match RFC 6838.
       </t>
     </section>
 
