@@ -101,11 +101,10 @@
 	target='ISOPDF'/>, "Portable Document Format", syntax.
       </t>
       <t>
-	PDF was originally envisioned as a way to communicate
+	PDF was originally envisioned as a way to reliably communicate
 	and view printed information electronically across a
 	wide variety of machine configurations, operating
-	systems, and communication networks in a reliable
-	manner.
+	systems, and communication networks.
       </t>
 
       <t>
@@ -113,10 +112,12 @@
 	PDF pages may include
 	text, images, graphics and multimedia content such as
 	video and audio.  PDF is also capable of containing
-	higher level structures including annotations,
+	auxiliary structures including annotations,
 	bookmarks, file attachments, hyperlinks, logical
-	structure and metadata.  A rich JavaScript model has
-	been defined for interacting with PDF documents.
+	structure and metadata.  These features are useful for
+	navigation, building collections of related documents and for
+	reviewing and commenting on documents.  A rich JavaScript
+	model has been defined for interacting with PDF documents.
       </t>
 
       <t>
@@ -131,11 +132,10 @@
 	encryption capability is combined with access control
 	information to facilitate management of the
 	functionality available to the recipient.  PDF supports
-	the inclusion of metadata through XMP <xref
-	target='XMP'/> metadata as well as directly via PDF
-	structures.
+	the inclusion of document and object-level metadata through
+	the eXtensible Metadata Platform<xref target='XMP'/>.
       </t>
-      <t>
+      <!-- 
 	Additionally, PDF reduces the
 	complexity of processing content to improve performance
 	for interactive viewing.  In addition to the rendering
@@ -144,7 +144,7 @@
 	the page itself, but are useful for navigation, building
 	collections of related documents and for reviewing and
 	commenting on documents.
-      </t>
+      -->
 
     </section>
     <section title='History'>
@@ -161,13 +161,13 @@
       <t>
 	The ISO TC-171 committee is presently working on a
 	refresh of PDF, known as ISO 32000-2, with a version
-	of PDF 2.0, expected to be published in late 2016 or
-	early 2017.
+	of PDF 2.0, expected to be published in 2017.
       </t>
       <t>
-	In addition to the ISO 32000-1:2008 and 32000-2 PDF standards,
-	several ISO PDF subset standards have been defined to
-	address specific use cases.  These standards include PDF
+	In addition to ISO 32000-1:2008 and 32000-2, 
+	several subset standards have been defined to
+	address specific use cases and standardized by
+	the ISO.  These standards include PDF
 	for Archival (PDF/A), PDF for Engineering (PDF/E), PDF
 	for Universal Accessibility (PDF/UA), PDF for Variable
 	Data and Transactional Printing (PDF/VT) and PDF for
@@ -366,58 +366,70 @@
     
     <section title='Subset Standards'>
       <t>
-          Several subsets of PDF specification have become separate ISO standards:
-          <list style="symbols">
-              <t>
-                  PDF/X, initially released in 2001, specifies
-                  how to use PDF for graphics exchange, with the aim to fascilitate
-                  correct and predictable printing by print service providers. The
-                  standard has gone through multiple revisions over the years and has
-                  several published parts, the most recently released one being part 8
-                  <xref target='ISOPDFX'/>, specifying different levels of conformance:
-                  PDF/X-1a:2001, PDF/X-3:2002, PDF/X-1a:2003, PDF/X-3:2003, PDF/X-4,
-                  PDF/X-4p, PDF/X-5, PDF/X-5g, PDF/X-5pg and PDF/X-5n.
-              </t>
-              <t>
-                  PDF/A, initially released in 2005, specifies how to use PDF for long-term
-                  preservation (archiving) of electronic documents. It prohibits PDF features
-                  which are not well suited to long term archiving of documents. Its
-                  requirements for PDF/A viewers include color management guidelines and
-                  support for embedded fonts. There are three parts of this standard, the
-                  most recent one being part 3 <xref target='ISOPDFA'/>, specifying several
-                  different conformance levels: PDF/A-1a, PDF/A-1b, PDF/A-2a, PDF/A-2b,
-                  PDF/A-2u, PDF/A-3a, PDF/A-3b and PDF/A-3u.
-              </t>
-              <t>
-                  PDF/E, initially released in 2008 as PDF/E-1 <xref target='ISOPDFE'/>,
-                  specifies how to use PDF in engineering workflows, such as manufacturing,
-                  construction and geospatial analysis. Future revisions of PDF/E are
-                  supposed to include support for 3D PDF workflows.
-              </t>
-              <t>
-                  PDF/VT, initially released in 2010, specifies how to use PDF in variable
-                  and transactional printing. It is based on PDF/X, and adds adidtional
-                  restrictions on PDF content elements and supporting metadata. It specifies
-                  three conformance levels: PDF/VT-1, PDF/VT-2 and PDF/VT-2s <xref target='ISOPDFVT'/>.
-              </t>
-              <t>
-                  PDF/UA, initially released in 2012 as PDF/UA-1 <xref target='ISOPDFUA'/>,
-                  specifies how to create accessible electonic documents. It generally
-                  requires use of tagged PDF feature and adds many requirements regarding
-                  semantic corectness of the tags used.
-              </t>
-          </list>
+        Several subsets of PDF have been published as distinct ISO standards:
+        <list style="symbols">
+          <t>
+            PDF/X, initially released in 2001 as PDF/X-1a <xref
+            target='ISOPDFX'/>, specifies how to use PDF for graphics
+            exchange, with the aim to fascilitate correct and
+            predictable printing by print service providers. The
+            standard has gone through multiple revisions over the
+            years and has several published parts, the most recently
+            released being part 8, specifying different levels of
+            conformance: PDF/X-1a:2001, PDF/X-3:2002, PDF/X-1a:2003,
+            PDF/X-3:2003, PDF/X-4, PDF/X-4p, PDF/X-5, PDF/X-5g,
+            PDF/X-5pg and PDF/X-5n.
+          </t>
+          <t>
+            PDF/A, initially released in 2005, specifies how to use
+            PDF for long-term preservation (archiving) of electronic
+            documents. It prohibits PDF features which are not well
+            suited to long term archiving of documents. Its
+            requirements for PDF/A viewers include color management
+            guidelines and support for embedded fonts. There are three
+            parts of this standard and a total of eight conformance levels:
+            PDF/A-1a, PDF/A-1b, PDF/A-2a,
+            PDF/A-2b, PDF/A-2u, PDF/A-3a, PDF/A-3b and PDF/A-3u.
+          </t>
+          <t>
+            PDF/E, initially released in 2008 as PDF/E-1 <xref
+            target='ISOPDFE'/>, specifies how to use PDF in
+            engineering workflows, such as manufacturing, construction
+            and geospatial analysis. Future revisions of PDF/E are
+            supposed to include support for 3D PDF workflows.
+          </t>
+          <t>
+            PDF/VT, initially released in 2010, specifies how to use
+            PDF in variable and transactional printing. It is based on
+            PDF/X, and adds adidtional restrictions on PDF content
+            elements and supporting metadata. It specifies three
+            conformance levels: PDF/VT-1, PDF/VT-2 and PDF/VT-2s <xref
+            target='ISOPDFVT'/>.
+          </t>
+          <t>
+            PDF/UA, initially released in 2012 as PDF/UA-1 <xref
+            target='ISOPDFUA'/>, specifies how to create accessible
+            electonic documents. It requires use of ISO 32000's Tagged
+            PDF feature, and adds many requirements regarding semantic
+            correctness in applying logical structures to content in
+            PDF documents.
+          </t>
+        </list>
       </t>
       <t>
-          All of these subset standards use <spanx style="verb">application/pdf</spanx> media type.
-          The subset standards are not exclusive, so it is possible to construct a PDF file which
-          conforms to, for example, both PDF/A-2b and PDF/X-4 subset standards.
+        All of these subset standards use <spanx
+        style="verb">application/pdf</spanx> media type.  The subset
+        standards are generally not exclusive, so it is possible to
+        construct a PDF file which conforms to, for example, both
+        PDF/A-2b and PDF/X-4 subset standards.
       </t>
       <t>
-          PDF documents claiming conformance to one or more of the subset standards use document
-          metadata stream to identify levels of conformance. PDF processors should examine document
-          metadata stream for such subset standards identifiers and, if apropriate, label
-          documents as such when presenting them to the user.
+        PDF documents claiming conformance to one or more of the
+        subset standards use XMP metadata to identify levels of
+        conformance. PDF processors should examine document metadata
+        streams for such subset standards identifiers and, if
+        apropriate, label documents as such when presenting them to
+        the user.
       </t>
     </section>
     
@@ -430,9 +442,9 @@
           features will be enabled.
       </t>
       <t>
-          As with most file formats, PDF files are experienced through a reader or viewer of PDF files.
+        PDF files are experienced through a reader or viewer of PDF files.
           For most of the common platforms in use (iOS, OS X, Windows, Android, ChromeOS, Kindle)
-          and for most browsers (Edge, Safari, Chrome,	Firefox), PDF viewing is built in. In addition,
+          and for most browsers (Edge, Safari, Chrome,	Firefox), PDF viewing is built-in. In addition,
           there are	many PDF viewers available for download and install. The PDF specification
           was published and freely available since the format was introduced in 1993, so hundreds
           of companies and organizations make tools for PDF creation, viewing, and manipulation.
@@ -440,32 +452,35 @@
     </section>
     <section anchor='security' title='Security Considerations'>
       <t>
-          PDF file format allows several constructs which may compromise security if handled
-          inadequatly by PDF processor. For example:
+        The PDF file format allows several constructs which may
+        compromise security if handled inadequately by PDF
+        processors. For example:
+
           <list style="symbols">
               <t>
-                  PDF may contain scripts to customize the displaying and processing
-                  of PDF files. These scripts are expressed in a version of JavaScript.
-                  They are intended for execution by the PDF processor.
+                PDF may contain scripts to customize the displaying
+                and processing of PDF files. These scripts are
+                expressed in a version of JavaScript and are intended
+                for execution by the PDF processor.
               </t>
               <t>
-                  PDF file may refer to other PDF files for portions of its content (also
-                  known as reference XObjects). PDF processor is expected to find these
+                  PDF file may refer to other PDF files for portions of content 
+                  using XObjects. PDF processors are expected to find these
                   external files and load them in order to display the document.
               </t>
               <t>
                   PDF may act as a container for various files embedded in it (for example,
-                  as attached files). PDF processor may offer functionality to open and
+                  as attached files). PDF processors may offer functionality to open and
                   display such files or store them on the system.
               </t>
               <t>
-                  PDF files may contain live links to content on the internet. PDF processor
+                  PDF files may contain links to content on the internet. PDF processors
                   may offer functionality to show such content upon following the link.
               </t>
           </list>
       </t>
       <t>
-          In addition, PDF processor itself, as well as its plugins, scripts etc. may be a
+        In addition, the PDF processor itself, as well as its plugins, scripts etc. may be a
           source of insecurity, by either obvious or subtle means.
       </t>
     </section>
@@ -529,7 +544,9 @@
 	Macintosh file type code(s): "PDF "
       </t>
       <t>
-	Person &amp; email address to  contact for further information: Duff Johnson &lt;duff.johnson@pdfa.org&gt;, Cherie Ekholm &lt;cheriee@microsoft.com&gt;, ISO 32000 Project Leaders
+	Person &amp; email address to contact for further information:
+	Duff Johnson &lt;duff@duff-johnson.com&gt;, Peter Wyatt
+	&lt;Peter.wyatt@cisra.canon.com.au, ISO 32000 Project Leaders
       </t>
       <t>
 	Intended usage: COMMON
@@ -538,9 +555,11 @@
 	Restrictions on usage: none
       </t>
       <t>
-        Author/Change controller:
-	ISO 32000 is by ISO/TC 171/SC 02/WG 08, "PDF specification".
-        Duff Johnson &lt;duff.johnson@pdfa.org&gt; and Cherie Ekholm &lt;cheriee@microsoft.com&gt; are current ISO 32000 Project Leaders.
+        Author/Change controller: ISO 32000 is by ISO/TC 171/SC 02/WG
+        08, "PDF specification".  Duff Johnson
+        &lt;duff@duff-johnson.com&gt; and Peter Wyatt
+        &lt;Peter.wyatt@cisra.canon.com.au are current ISO 32000
+        Project Leaders.
       </t>
       
     </section>
@@ -660,9 +679,6 @@
 	  </author>
 	  <date month="" year="1999"/>
 	</front>
-	<annotation>Available at: 
-	<eref target="http://partners.adobe.com/public/developer/en/ps/PLRM.pdf"/>
-	</annotation>	
       </reference>
       
       <?rfc include='reference.RFC.6838' ?>
