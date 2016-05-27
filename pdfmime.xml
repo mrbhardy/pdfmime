@@ -212,7 +212,8 @@
         The table below lists the PDF open parameters relevant
         to PDF.  All coordinate values (left, right, top, and
         bottom) shall be expressed in the default user space
-        coordinate system.
+        coordinate system (see <xref target='ISOPDF'/> section
+	8.3.2.3 "User Space").
       </t>
       <texttable>
         <preamble>
