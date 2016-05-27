@@ -355,7 +355,8 @@
         </c>
         <c>
           Open the document and then import the data from the
-          specified FDF or XFDF file.  The URI shall be either
+          specified FDF or XFDF file (see <xref target='ISOPDF'/>
+	  Section 12.7.8).  The URI shall be either
           a relative or absolute URI to an FDF or XFDF file.
           
           The fdf parameter should be specified as the last
@@ -468,9 +469,11 @@
                 for execution by the PDF processor.
               </t>
               <t>
-                  PDF file may refer to other PDF files for portions of content 
-                  using XObjects. PDF processors are expected to find these
-                  external files and load them in order to display the document.
+                PDF file may refer to other PDF files for portions of
+                content.  PDF processors are expected to find these
+                external files and load them in order to display the
+                document.
+
               </t>
               <t>
                   PDF may act as a container for various files embedded in it (for example,
@@ -570,7 +573,7 @@
     </section>
   </middle>
   <back>
-    <references>
+    <references title="Normative References">
       <!-- ?rfc include='reference.ISO.32000-1.2008' ? -->
       <reference anchor="ISOPDF">
 	<front>
@@ -583,7 +586,8 @@
 	<seriesInfo name="ISO" value="32000-1:2008"/>
 	<annotation>Also available free from Adobe Systems.</annotation>
       </reference>
-      
+    </references>
+    <references title="Informative References">
       <!-- ?rfc include='reference.ISO.32000-2' ? -->
       <reference anchor="ISOPDF2">
 	<front>
