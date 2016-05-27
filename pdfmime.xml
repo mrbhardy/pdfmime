@@ -558,9 +558,10 @@
       <t>
 	Restrictions on usage: none
       </t>
+      <t>Author: Authors of this document</t>
       <t>
-        Author/Change controller: ISO 32000 is by ISO/TC 171/SC 02/WG
-        08, "PDF specification".  Duff Johnson
+        Change controller: ISO; in particular, ISO 32000 is by
+	ISO/TC 171/SC 02/WG 08, "PDF specification".  Duff Johnson
         &lt;duff@duff-johnson.com&gt; and Peter Wyatt
         &lt;Peter.wyatt@cisra.canon.com.au are current ISO 32000
         Project Leaders.
