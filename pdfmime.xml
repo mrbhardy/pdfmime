@@ -178,10 +178,12 @@
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
-	A set of fragment identifiers <xref target='RFC3986'/>
-	and their handling are defined in ISO 32000-2 <xref
-	target="ISOPDF2"/>.  This section summarizes that
-	material. 
+	A set of fragment identifiers <xref target='RFC3986'/> and
+	their handling are defined in ISO 32000-2 <xref
+	target="ISOPDF2"/>.  This section summarizes that material;
+	any disagreements between that document and this should be
+	resolved in favor of the ISO definition, once that has been
+	approved.
       </t>
       <t>
         A fragment identifier is comprised of one or more
@@ -211,9 +213,10 @@
       <t>
         The table below lists the PDF open parameters relevant
         to PDF.  All coordinate values (left, right, top, and
-        bottom) shall be expressed in the default user space
-        coordinate system (see <xref target='ISOPDF'/> section
-	8.3.2.3 "User Space").
+        bottom) are expressed in the default user space
+        coordinate system (1/72 of an inch measured down
+	and to the right from the upper-left corner); see
+	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
       <texttable>
         <preamble>
@@ -575,6 +578,7 @@
   </middle>
   <back>
     <references title="Normative References">
+      
       <!-- ?rfc include='reference.ISO.32000-1.2008' ? -->
       <reference anchor="ISOPDF">
 	<front>
@@ -587,8 +591,7 @@
 	<seriesInfo name="ISO" value="32000-1:2008"/>
 	<annotation>Also available free from Adobe Systems.</annotation>
       </reference>
-    </references>
-    <references title="Informative References">
+
       <!-- ?rfc include='reference.ISO.32000-2' ? -->
       <reference anchor="ISOPDF2">
 	<front>
@@ -599,9 +602,12 @@
 	  <date month="" year=""/>
 	</front>
 	<seriesInfo name="ISO" value="32000-2"/>
-    <annotation>Currently under development - publication expected in 2017.</annotation>
+	<annotation>Currently under development - publication expected in 2017. This becomes a Normative Reference on approval.</annotation>
       </reference>
       
+    </references>
+
+    <references title="Informative References">
       <reference anchor="ISOPDFX">
           <front>
               <title>Graphic technology -- Prepress digital data exchange using PDF --
