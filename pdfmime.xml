@@ -705,34 +705,34 @@
 	This specification replaces RFC 3778, which previously
 	defined the <spanx style="verb">application/pdf</spanx>
 	Media Type. Differences include:
+	<list style="symbols">
+	  <t>
+	    To reflect the transition from a proprietary specification
+	    by Adobe to an open ISO Standard, the Change Controller
+	    has changed from Adobe to ISO, and references updated.
+	  </t>
+	  <t>
+	    The overview of PDF capabilitiies, the history of PDF, and
+	    the descriptions of PDF subsets were updated to reflect
+	    more recent relevant history.
+	  </t>
+	  <t>
+	    The section on Fragment identifiers was updated to closely
+	    reflect the material which has been added to ISO-32000-2.
+	  </t>
+	  <t>
+	    The status of popular PDF impelementations was
+	    updated.
+	  </t>
+	  <t>
+	    The Security Considerations were updated to match current
+	    status.
+	  </t>
+	  <t>
+	    The registration template was updated to match RFC 6838.
+	  </t>
+	</list>
       </t>
-      <t>
-	To reflect the transition from a proprietary specification by
-	Adobe to an open ISO Standard, the Change Controller has
-	changed from Adobe to ISO, and references updated.
-      </t>
-      <t>
-	The overview of PDF capabilitiies, the history of PDF,
-	and the descriptions of PDF subsets were updated
-	to reflect more recent relevant history.
-      </t>
-      <t>
-	The section on Fragment identifiers was updated to
-	closely reflect the material which has been added
-	to ISO-32000-2.
-      </t>
-      <t>
-	The status of popular PDF impelementations was
-	updatd.
-      </t>
-      <t>
-	The Security Considerations were updated to match
-	current status.
-      </t>
-      <t>
-	The registration template was updated to match RFC 6838.
-      </t>
-    </section>
-
+      </section>
   </back>
 </rfc>
