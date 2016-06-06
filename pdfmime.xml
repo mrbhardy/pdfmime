@@ -178,10 +178,12 @@
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
-	A set of fragment identifiers <xref target='RFC3986'/>
-	and their handling are defined in ISO 32000-2 <xref
-	target="ISOPDF2"/>.  This section summarizes that
-	material. 
+	A set of fragment identifiers <xref target='RFC3986'/> and
+	their handling are defined in ISO 32000-2 <xref
+	target="ISOPDF2"/>.  This section summarizes that material;
+	any disagreements between that document and this should be
+	resolved in favor of the ISO definition, once that has been
+	approved.
       </t>
       <t>
         A fragment identifier is comprised of one or more
@@ -211,8 +213,10 @@
       <t>
         The table below lists the PDF open parameters relevant
         to PDF.  All coordinate values (left, right, top, and
-        bottom) shall be expressed in the default user space
-        coordinate system.
+        bottom) are expressed in the default user space
+        coordinate system (1/72 of an inch measured down
+	and to the right from the upper-left corner; see
+	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
       <texttable>
         <preamble>
@@ -602,6 +606,7 @@
       </reference>
       
     </references>
+
     <references title="Informative References">
       <reference anchor="ISOPDFX">
           <front>
