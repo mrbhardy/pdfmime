@@ -215,7 +215,7 @@
         to PDF.  All coordinate values (left, right, top, and
         bottom) are expressed in the default user space
         coordinate system (1/72 of an inch measured down
-	and to the right from the upper-left corner; see
+	and to the right from the upper-left corner); see
 	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
       <texttable>
