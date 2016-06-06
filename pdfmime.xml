@@ -10,7 +10,7 @@
 <?rfc inline='yes'?>
 <?rfc-ext parse-xml-in-artwork='yes' ?>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-<rfc docName="draft-hardy-pdf-mime-01" category="info" obsoletes='3778'>
+<rfc docName="draft-hardy-pdf-mime-02" category="info" obsoletes='3778'>
   <front>
     <title abbrev="application/pdf">The application/pdf Media
     Type</title>
@@ -178,10 +178,12 @@
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
-	A set of fragment identifiers <xref target='RFC3986'/>
-	and their handling are defined in ISO 32000-2 <xref
-	target="ISOPDF2"/>.  This section summarizes that
-	material. 
+	A set of fragment identifiers <xref target='RFC3986'/> and
+	their handling are defined in ISO 32000-2 <xref
+	target="ISOPDF2"/>.  This section summarizes that material;
+	any disagreements between that document and this should be
+	resolved in favor of the ISO definition, once that has been
+	approved.
       </t>
       <t>
         A fragment identifier is comprised of one or more
@@ -211,8 +213,10 @@
       <t>
         The table below lists the PDF open parameters relevant
         to PDF.  All coordinate values (left, right, top, and
-        bottom) shall be expressed in the default user space
-        coordinate system.
+        bottom) are expressed in the default user space
+        coordinate system (1/72 of an inch measured down
+	and to the right from the upper-left corner; see
+	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
       <texttable>
         <preamble>
@@ -355,7 +359,8 @@
         </c>
         <c>
           Open the document and then import the data from the
-          specified FDF or XFDF file.  The URI shall be either
+          specified FDF or XFDF file (see <xref target='ISOPDF'/>
+	  Section 12.7.8).  The URI shall be either
           a relative or absolute URI to an FDF or XFDF file.
           
           The fdf parameter should be specified as the last
@@ -468,9 +473,11 @@
                 for execution by the PDF processor.
               </t>
               <t>
-                  PDF file may refer to other PDF files for portions of content 
-                  using XObjects. PDF processors are expected to find these
-                  external files and load them in order to display the document.
+                PDF file may refer to other PDF files for portions of
+                content.  PDF processors are expected to find these
+                external files and load them in order to display the
+                document.
+
               </t>
               <t>
                   PDF may act as a container for various files embedded in it (for example,
@@ -558,9 +565,10 @@
       <t>
 	Restrictions on usage: none
       </t>
+      <t>Author: Authors of this document</t>
       <t>
-        Author/Change controller: ISO 32000 is by ISO/TC 171/SC 02/WG
-        08, "PDF specification".  Duff Johnson
+        Change controller: ISO; in particular, ISO 32000 is by
+	ISO/TC 171/SC 02/WG 08, "PDF specification".  Duff Johnson
         &lt;duff@duff-johnson.com&gt; and Peter Wyatt
         &lt;Peter.wyatt@cisra.canon.com.au are current ISO 32000
         Project Leaders.
@@ -569,7 +577,8 @@
     </section>
   </middle>
   <back>
-    <references>
+    <references title="Normative References">
+      
       <!-- ?rfc include='reference.ISO.32000-1.2008' ? -->
       <reference anchor="ISOPDF">
 	<front>
@@ -582,7 +591,7 @@
 	<seriesInfo name="ISO" value="32000-1:2008"/>
 	<annotation>Also available free from Adobe Systems.</annotation>
       </reference>
-      
+
       <!-- ?rfc include='reference.ISO.32000-2' ? -->
       <reference anchor="ISOPDF2">
 	<front>
@@ -593,9 +602,12 @@
 	  <date month="" year=""/>
 	</front>
 	<seriesInfo name="ISO" value="32000-2"/>
-    <annotation>Currently under development - publication expected in 2017.</annotation>
+	<annotation>Currently under development - publication expected in 2017. This becomes a Normative Reference on approval.</annotation>
       </reference>
       
+    </references>
+
+    <references title="Informative References">
       <reference anchor="ISOPDFX">
           <front>
               <title>Graphic technology -- Prepress digital data exchange using PDF --
