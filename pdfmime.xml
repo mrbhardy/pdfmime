@@ -312,6 +312,23 @@
           measured from the top left corner of the page.
         </c>
         <c>
+          <spanx style="verb">structelem</spanx>
+        </c>
+        <c>
+          <spanx style="emph">structID</spanx>
+        </c>
+        <c>
+          Open to the page on which the first content item, 
+		  hierarchically contained within the structure element 
+		  identified by the structure ID, is located.  If no 
+		  content is contained within the hierarchy of the 
+		  structure element or the ID does not match a structure 
+		  element, the page number shall be treated as the first 
+		  page within the document.  The structID shall be a byte 
+		  string with URI encoding that will be matched to the ID
+		  key within a StructElem dictionary.
+        </c>
+        <c>
           <spanx style="verb">comment</spanx>
         </c>
         <c>
@@ -369,6 +386,18 @@
           Note: The fdf parameter is recommended to be the
           last parameter so that the document can open
           directly to the appropriate view.
+        </c>
+        <c>
+          <spanx style="verb">ef</spanx>
+        </c>
+        <c>
+          <spanx style="emph">name</spanx>
+        </c>
+        <c>
+          Open the embedded file contained within the EmbeddedFiles
+		  name tree identified by the name.  The name argument shall
+		  be a byte string used to match a file specification dictionary
+		  in the EmbeddedFiles name tree.
         </c>
       </texttable>
     </section>
