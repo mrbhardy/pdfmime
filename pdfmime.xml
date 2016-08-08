@@ -15,7 +15,7 @@
     <title abbrev="application/pdf">The application/pdf Media
     Type</title>
     <author initials="M." surname="Hardy" fullname="Matthew Hardy">
-      <organization>Adobe</organization>
+      <organization>Adobe Systems Incorporated</organization>
       <address>
 	<postal>
 	  <street>345 Park Ave</street>
@@ -28,7 +28,7 @@
       </address>
     </author>
     <author initials="L." surname="Masinter" fullname="Larry Masinter">
-      <organization>Adobe</organization>
+      <organization>Adobe Systems Incorporated</organization>
       <address>
 	<postal>
 	  <street>345 Park Ave</street>
@@ -42,7 +42,7 @@
       </address>
     </author>
     <author initials="D." surname="Markovic" fullname="Dejan Markovic">
-      <organization>Adobe</organization>
+      <organization>Adobe Systems Incorporated</organization>
       <address>
         <postal>
           <street>345 Park Ave</street>
@@ -152,7 +152,7 @@
       <t>
 	PDF is used widely in the Internet community.  The first
 	version of PDF, 1.0, was published in 1993 by Adobe
-	Systems.  Since then PDF has grown to be a
+	Systems Incorporated.  Since then PDF has grown to be a
 	widely-used format for capturing and exchanging
 	formatted documents electronically across the Web, via
 	e-mail and virtually every other document exchange
@@ -623,7 +623,7 @@
 	  <date month="" year="2008"/>
 	</front>
 	<seriesInfo name="ISO" value="32000-1:2008"/>
-	<annotation>Also available free from Adobe Systems.</annotation>
+	<annotation>Also available free from Adobe.</annotation>
       </reference>
 
       <!-- ?rfc include='reference.ISO.32000-2' ? -->
