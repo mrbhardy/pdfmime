@@ -10,7 +10,7 @@
 <?rfc inline='yes'?>
 <?rfc-ext parse-xml-in-artwork='yes' ?>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-<rfc docName="draft-hardy-pdf-mime-02" category="info" obsoletes='3778'>
+<rfc docName="draft-hardy-pdf-mime-03" category="info" obsoletes='3778'>
   <front>
     <title abbrev="application/pdf">The application/pdf Media
     Type</title>
@@ -98,7 +98,8 @@
 	This document is intended to provide updated information
 	on the registration of the MIME Media Type
 	<spanx style="verb">application/pdf</spanx> for documents defined in the PDF <xref
-	target='ISOPDF'/>, "Portable Document Format", syntax.
+	target='ISOPDF'/>, "Portable Document Format", syntax. It obsoletes <xref
+    target='RFC3778'/>.
       </t>
       <t>
 	PDF was originally envisioned as a way to reliably communicate
@@ -518,6 +519,10 @@
                   may offer functionality to show such content upon following the link.
               </t>
           </list>
+          
+          User agents executing any scripts or programs related to these constructs must
+          be extremely careful to insure that untrusted software is executed in a
+          protected environment
       </t>
       <t>
         In addition, the PDF processor itself, as well as its plugins, scripts etc. may be a
@@ -728,6 +733,7 @@
       
       <?rfc include='reference.RFC.6838' ?>
       <?rfc include='reference.RFC.3986' ?>
+      <?rfc include='reference.RFC.3778' ?>
     </references>
     <section title='Changes since RFC 3778'>
       <t>
