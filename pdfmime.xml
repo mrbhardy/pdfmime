@@ -86,9 +86,11 @@
 	The Portable Document Format (PDF) is an ISO standard (ISO
 	32000-1:2008) defining a final-form document representation
 	language in use for document exchange, including on the
-	Internet, since 1993.  This document provides an overview of
-	the PDF format and updates the media type registration of
-	<spanx style="verb">application/pdf</spanx>.
+    Internet, since 1993. It was adopted using ISO Fast-Track
+    process and is technically identical to Adobe Portable Document
+    Format version 1.7 <xref target='AdobePDF'/>  This document
+    provides an overview of the PDF format and updates the media
+    type registration of <spanx style="verb">application/pdf</spanx>.
       </t>
     </abstract>
   </front>
@@ -507,12 +509,15 @@
                 content.  PDF processors are expected to find these
                 external files and load them in order to display the
                 document.
-
               </t>
               <t>
                   PDF may act as a container for various files embedded in it (for example,
                   as attached files). PDF processors may offer functionality to open and
-                  display such files or store them on the system.
+                  display such files or store them on the system. PDF specification places
+                  no restrictions on types of files which may be embedded, so PDF processors
+                  should be extremely careful to prevent unwanted execution of attached executables
+                  or decompression of attached archives which may store dangerous files in the
+                  host file system.
               </t>
               <t>
                   PDF files may contain links to content on the internet. PDF processors
@@ -722,15 +727,25 @@
       <!-- rfc include='reference.Adobe.postscript'
 	   PostScript -->
       <reference anchor="PS">
-	<front>
-	  <title>PostScript Language Reference, third edition</title>
-	  <author>
-	    <organization>Adobe Systems Incorporated</organization>
-	  </author>
-	  <date month="" year="1999"/>
-	</front>
+	      <front>
+	          <title>PostScript Language Reference, third edition</title>
+	          <author>
+	              <organization>Adobe Systems Incorporated</organization>
+	          </author>
+	          <date month="" year="1999"/>
+	      </front>
       </reference>
       
+      <reference anchor="AdobePDF">
+          <front>
+              <title>PDF Reference, sixth edition</title>
+              <author>
+                  <organization>Adobe Systems Incorporated</organization>
+              </author>
+              <date month="" year="2006"/>
+          </front>
+      </reference>
+
       <?rfc include='reference.RFC.6838' ?>
       <?rfc include='reference.RFC.3986' ?>
       <?rfc include='reference.RFC.3778' ?>
