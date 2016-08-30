@@ -88,7 +88,7 @@
 	language in use for document exchange, including on the
     Internet, since 1993. It was adopted using ISO Fast-Track
     process and is technically identical to Adobe Portable Document
-    Format version 1.7 <xref target='AdobePDF'/>  This document
+    Format version 1.7 <xref target='AdobePDF'/>.  This document
     provides an overview of the PDF format and updates the media
     type registration of <spanx style="verb">application/pdf</spanx>.
       </t>
@@ -474,21 +474,27 @@
       </t>
     </section>
     
-    <section anchor='compat' title='PDF Implementations'>
+    <section anchor='compat' title='PDF Versions'>
       <t>
-          PDF format has gone through several revisions, primarily for the addition of features.
-          PDF features have generally been added in a way that older viewers 'fail gracefully'
-          because they can just ignore features they do not recognize, but even so, the older the
-          PDF version produced, the more legacy viewers will support that version, but the fewer
-          features will be enabled.
+        PDF format has gone through several revisions, primarily for
+        the addition of features.  PDF features have generally been
+        added in a way that older viewers 'fail gracefully' because
+        they can just ignore features they do not recognize, but even
+        so, the older the PDF version produced, the more legacy
+        viewers will support that version, but the fewer features will
+        be enabled. See <xref target="ISOPDF"/> sections 1.2 “PDF
+        Version Numbers” and Section 7.5.2 paragraph 4.
       </t>
+    </section>
+
+    <section anchor='impl' title='PDF Implementations'>
       <t>
         PDF files are experienced through a reader or viewer of PDF files.
-          For most of the common platforms in use (iOS, OS X, Windows, Android, ChromeOS, Kindle)
-          and for most browsers (Edge, Safari, Chrome,	Firefox), PDF viewing is built-in. In addition,
-          there are	many PDF viewers available for download and install. The PDF specification
-          was published and freely available since the format was introduced in 1993, so hundreds
-          of companies and organizations make tools for PDF creation, viewing, and manipulation.
+        For most of the common platforms in use (iOS, OS X, Windows, Android, ChromeOS, Kindle)
+        and for most browsers (Edge, Safari, Chrome,	Firefox), PDF viewing is built-in. In addition,
+        there are	many PDF viewers available for download and install. The PDF specification
+        was published and freely available since the format was introduced in 1993, so hundreds
+        of companies and organizations make tools for PDF creation, viewing, and manipulation.
       </t>
     </section>
     <section anchor='security' title='Security Considerations'>
@@ -497,41 +503,44 @@
         compromise security if handled inadequately by PDF
         processors. For example:
 
-          <list style="symbols">
-              <t>
-                PDF may contain scripts to customize the displaying
-                and processing of PDF files. These scripts are
-                expressed in a version of JavaScript and are intended
-                for execution by the PDF processor.
-              </t>
-              <t>
-                PDF file may refer to other PDF files for portions of
-                content.  PDF processors are expected to find these
-                external files and load them in order to display the
-                document.
-              </t>
-              <t>
-                  PDF may act as a container for various files embedded in it (for example,
-                  as attached files). PDF processors may offer functionality to open and
-                  display such files or store them on the system. PDF specification places
-                  no restrictions on types of files which may be embedded, so PDF processors
-                  should be extremely careful to prevent unwanted execution of attached executables
-                  or decompression of attached archives which may store dangerous files in the
-                  host file system.
-              </t>
-              <t>
-                  PDF files may contain links to content on the internet. PDF processors
-                  may offer functionality to show such content upon following the link.
-              </t>
-          </list>
-          
-          User agents executing any scripts or programs related to these constructs must
-          be extremely careful to insure that untrusted software is executed in a
-          protected environment
+        <list style="symbols">
+          <t>
+            PDF may contain scripts to customize the displaying
+            and processing of PDF files. These scripts are
+            expressed in a version of JavaScript and are intended
+            for execution by the PDF processor.
+          </t>
+          <t>
+            PDF file may refer to other PDF files for portions of
+            content.  PDF processors are expected to find these
+            external files and load them in order to display the
+            document.
+          </t>
+          <t>
+            PDF may act as a container for various files embedded in
+            it (for example, as attached files). PDF processors may
+            offer functionality to open and display such files or
+            store them on the system. THe PDF specification places no
+            restrictions on types of files which may be embedded, so
+            PDF processors should be extremely careful to prevent
+            unwanted execution of attached executables or
+            decompression of attached archives which may store
+            dangerous files in the host file system.
+          </t>
+          <t>
+            PDF files may contain links to content on the
+            internet. PDF processors may offer functionality to show
+            such content upon following the link.
+          </t>
+        </list>
+        User agents executing any scripts or programs related to these
+        constructs must be extremely careful to insure that untrusted
+        software is executed in a protected environment.
       </t>
       <t>
-        In addition, the PDF processor itself, as well as its plugins, scripts etc. may be a
-          source of insecurity, by either obvious or subtle means.
+        In addition, the PDF processor itself, as well as its plugins,
+        scripts etc. may be a source of insecurity, by either obvious
+        or subtle means.
       </t>
     </section>
     
@@ -570,7 +579,7 @@
       </t>
       <t>
 	Applications which use this media type: See <xref
-	target='compat'/> of this document.
+	target='impl'/> of this document.
       </t>
       <t>
 	Fragment identifier considerations: See <xref
