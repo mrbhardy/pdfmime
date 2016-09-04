@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd">
 <?rfc toc='yes' ?>     <!-- add table of contents -->
-<?rfc editing='yes' ?> <!-- paragraph numbering -->
+<?rfc editing='no' ?>  <!-- paragraph numbering -->
 <?rfc symrefs='yes' ?> <!-- use references like [ABC] instead of [1] -->
 <?rfc sortrefs='no'?>  <!-- sort the references alphabetically -->
 <?rfc linkmailto='no'?>
@@ -10,7 +10,7 @@
 <?rfc inline='yes'?>
 <?rfc-ext parse-xml-in-artwork='yes' ?>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-<rfc docName="draft-hardy-pdf-mime-03" category="info" obsoletes='3778'>
+<rfc docName="draft-hardy-pdf-mime-04" category="info" obsoletes='3778'>
   <front>
     <title abbrev="application/pdf">The application/pdf Media
     Type</title>
@@ -86,11 +86,9 @@
 	The Portable Document Format (PDF) is an ISO standard (ISO
 	32000-1:2008) defining a final-form document representation
 	language in use for document exchange, including on the
-    Internet, since 1993. It was adopted using ISO Fast-Track
-    process and is technically identical to Adobe Portable Document
-    Format version 1.7 <xref target='AdobePDF'/>.  This document
-    provides an overview of the PDF format and updates the media
-    type registration of <spanx style="verb">application/pdf</spanx>.
+	Internet, since 1993. This document provides an overview of
+	the PDF format and updates the media type registration of
+	<spanx style="verb">application/pdf</spanx>.
       </t>
     </abstract>
   </front>
@@ -153,13 +151,15 @@
     <section title='History'>
       <t>
 	PDF is used widely in the Internet community.  The first
-	version of PDF, 1.0, was published in 1993 by Adobe
-	Systems Incorporated.  Since then PDF has grown to be a
-	widely-used format for capturing and exchanging
-	formatted documents electronically across the Web, via
-	e-mail and virtually every other document exchange
-	mechanism.  In 2008, PDF 1.7 was published as an ISO
-	standard <xref target='ISOPDF'/>, ISO 32000-1:2008.
+	version of PDF, 1.0, was published in 1993 by Adobe Systems
+	Incorporated.  Since then PDF has grown to be a widely-used
+	format for capturing and exchanging formatted documents
+	electronically across the Web, via e-mail and virtually every
+	other document exchange mechanism.  In 2008, PDF 1.7 was
+	published as an ISO standard <xref target='ISOPDF'/>, ISO
+	32000-1:2008.  It was adopted using ISO Fast-Track process and
+	is technically identical to Adobe Portable Document Format
+	version 1.7 <xref target='AdobePDF'/>.
       </t>
       <t>
 	The ISO TC-171 committee is presently working on a
@@ -171,10 +171,12 @@
 	several subset standards have been defined to
 	address specific use cases and standardized by
 	the ISO.  These standards include PDF
-	for Archival (PDF/A), PDF for Engineering (PDF/E), PDF
-	for Universal Accessibility (PDF/UA), PDF for Variable
-	Data and Transactional Printing (PDF/VT) and PDF for
-	Prepress Digital Data Exchange (PDF/X).  The subset
+	for Archival (PDF/A) <xref target="ISOPDFA"/>,
+	PDF for Engineering (PDF/E) <xref target="ISOPDFE"/>,
+	PDF for Universal Accessibility (PDF/UA) <xref target="ISOPDFUA"/>,
+	PDF for Variable Data and Transactional Printing (PDF/VT) <xref target="ISOPDFVT"/>, 
+	and PDF for Prepress Digital Data Exchange (PDF/X) <xref target="ISOPDFX"/>.
+	The subset
 	standards are fully compliant PDF files capable of being
 	displayed in a general PDF viewer.
       </t>
@@ -482,8 +484,9 @@
         they can just ignore features they do not recognize, but even
         so, the older the PDF version produced, the more legacy
         viewers will support that version, but the fewer features will
-        be enabled. See <xref target="ISOPDF"/> sections 1.2 “PDF
-        Version Numbers” and Section 7.5.2 paragraph 4.
+        be enabled. See <xref target="ISOPDF"/> Annex I, "PDF Versions
+	and Compatibility". 
+
       </t>
     </section>
 
@@ -533,9 +536,9 @@
             such content upon following the link.
           </t>
         </list>
-        User agents executing any scripts or programs related to these
-        constructs must be extremely careful to insure that untrusted
-        software is executed in a protected environment.
+        PDF interpreters executing any scripts or programs related to
+        these constructs must be extremely careful to insure that
+        untrusted software is executed in a protected environment.
       </t>
       <t>
         In addition, the PDF processor itself, as well as its plugins,
