@@ -193,21 +193,24 @@
 	approved.
       </t>
       <t>
-        A fragment identifier is comprised of one or more
-        parameters separated
-        by the AMPERSAND (&amp;)  character.  Each
-        parameter implies an action to be performed on the
-        document and provides values to be used for that
-        action; the values for a parameter are introduced
-        by an EQUAL SIGN (=) and separated by a COMMA (,);
-	values which are strings appear in the fragment
-	identifier using URI's percent-hex escaping --
-	spaces, reserved and non-ASCII strings are 
-	included by %nn encoding the UTF-8 of each character.
-
-        Actions shall be processed and executed from left to
-        right as they appear in the character string that
-        makes up the fragment identifier.
+          A fragment identifier is comprised of one or more
+          parameters separated
+          by the AMPERSAND (&amp;)  character.  Traditionally,
+          these parameters have been used as open actions with each
+          parameter implies an action to be performed on the
+          document and provides values to be used for that
+          action; the values for a parameter are introduced
+          by an EQUAL SIGN (=) and separated by a COMMA (,);
+          values which are strings appear in the fragment
+          identifier using URI's percent-hex escaping --
+          spaces, reserved and non-ASCII strings are
+          included by %nn encoding the UTF-8 of each character.
+          Actions shall be processed and executed from left to
+          right as they appear in the character string that
+          makes up the fragment identifier.
+      </t>
+      <t>
+         
       </t>
       <t>
 	The parameters listed in this section
