@@ -193,21 +193,21 @@
 	approved.
       </t>
       <t>
-        A fragment identifier is comprised of one or more
-        parameters separated
-        by the AMPERSAND (&amp;)  character.  Each
-        parameter implies an action to be performed on the
-        document and provides values to be used for that
-        action; the values for a parameter are introduced
-        by an EQUAL SIGN (=) and separated by a COMMA (,);
-	values which are strings appear in the fragment
-	identifier using URI's percent-hex escaping --
-	spaces, reserved and non-ASCII strings are 
-	included by %nn encoding the UTF-8 of each character.
-
-        Actions shall be processed and executed from left to
-        right as they appear in the character string that
-        makes up the fragment identifier.
+          A fragment identifier is comprised of one or more
+          parameters separated
+          by the AMPERSAND (&amp;)  character.  Traditionally,
+          these parameters have been used as open actions with each
+          parameter implying an action to be performed on the
+          document and providing values to be used for that
+          action; the values for a parameter are introduced
+          by an EQUAL SIGN (=) and separated by a COMMA (,);
+          values which are strings appear in the fragment
+          identifier using URI's percent-hex escaping --
+          spaces, reserved and non-ASCII strings are
+          included by %nn encoding the UTF-8 of each character.
+          Actions shall be processed and executed from left to
+          right as they appear in the character string that
+          makes up the fragment identifier.
       </t>
       <t>
 	The parameters listed in this section
@@ -216,6 +216,16 @@
 	PDF open parameters.  The fragment identifier should
 	be processed immediately after document-specified open
 	parameters have been processed.
+      </t>
+      <t>
+          In addition to being used as open parameters, many of these
+          fragment identifiers can alternatively be used to identify
+          an item of content within a document. When used for this
+          purpose the action shall be ignored, but the content that
+          was the target of the action (or contained within a bounding
+          box defined by the action) shall be identified. One common use
+          case for this type of processing is in identifying the target of
+          linked data.
       </t>
       <t>
         The table below lists the PDF open parameters relevant
@@ -405,6 +415,14 @@
 		  name tree identified by the name.  The name argument shall
 		  be a byte string used to match a file specification dictionary
 		  in the EmbeddedFiles name tree.
+          
+          It should be noted that security should be strongly considered
+          when opening an embedded file.  When opening a file that is not
+          from a trusted source, a processor may choose to prompt the user
+          or even prevent opening of the file.
+          
+          Any remaining open parameters beyond this apply to the selected
+          embedded file.
         </c>
       </texttable>
     </section>
