@@ -421,8 +421,12 @@
           from a trusted source, a processor may choose to prompt the user
           or even prevent opening of the file.
           
-          Any remaining open parameters beyond this apply to the selected
-          embedded file.
+          Any remaining part of the fragment identifier beyond the
+	  "ef" open parameter, applies to the selected embedded file,
+	  e.g., with <spanx
+	  style="verb">url#ef=example.html&rest-of-fragment</spanx>
+	  the fragment identifier "rest-of-fragment" is interpreted
+	  with respect to the embedded file "example.html".
         </c>
       </texttable>
     </section>
