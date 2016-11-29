@@ -424,7 +424,7 @@
           Any remaining part of the fragment identifier beyond the
 	  "ef" open parameter, applies to the selected embedded file,
 	  e.g., with <spanx
-	  style="verb">url#ef=example.html&rest-of-fragment</spanx>
+	  style="verb">url#ef=example.html&amp;rest-of-fragment</spanx>
 	  the fragment identifier "rest-of-fragment" is interpreted
 	  with respect to the embedded file "example.html".
         </c>
@@ -527,6 +527,21 @@
     </section>
     <section anchor='security' title='Security Considerations'>
       <t>
+	PDF is certainly a complex media type as per Section 4.6 of
+	<xref target='RFC6838'/>, which sets requirements for security
+	analysis of media type registrations. <xref target='RFC3778'/>
+	(which this document obsoletes) contained a detailed analysis
+	of some of the security issues for PDF implementations known
+	at the time. While the analysis isn't wrong, the threat
+	analysis is much too limited, and the mitigations somewhat out
+	of date. And now there is extensive literature on security
+	threats to PDF implementations and how to avoid them
+	consistent with broad implementation over decades.  We are not
+	registering a new type but rather making a primarily
+	administrative update.  With those caveats, we retain a more
+	general security considerations statement:
+      </t>
+      <t>
         The PDF file format allows several constructs which may
         compromise security if handled inadequately by PDF
         processors. For example:
@@ -544,11 +559,13 @@
             external files and load them in order to display the
             document.
           </t>
+	  
           <t>
             PDF may act as a container for various files embedded in
             it (for example, as attached files). PDF processors may
             offer functionality to open and display such files or
-            store them on the system. THe PDF specification places no
+            store them on the system, such as with the "ef" open
+	    action. THe PDF specification places no
             restrictions on types of files which may be embedded, so
             PDF processors should be extremely careful to prevent
             unwanted execution of attached executables or
@@ -564,6 +581,11 @@
         PDF interpreters executing any scripts or programs related to
         these constructs must be extremely careful to insure that
         untrusted software is executed in a protected environment.
+      </t>
+      <t>
+	The fragment identifier syntax <xref target='fragments'/>
+	contains directives for opening ("ef") or inluding
+	("fdf") additional material.
       </t>
       <t>
         In addition, the PDF processor itself, as well as its plugins,
