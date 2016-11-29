@@ -423,8 +423,8 @@
           
           Any remaining part of the fragment identifier beyond the
 	  "ef" open parameter, applies to the selected embedded file,
-	  e.g., with <spanx
-	  style="verb">url#ef=example.html&amp;rest-of-fragment</spanx>
+	  e.g., with 
+	  <spanx style="verb">url#ef=example.html&amp;rest-of-fragment</spanx>
 	  the fragment identifier "rest-of-fragment" is interpreted
 	  with respect to the embedded file "example.html".
         </c>
