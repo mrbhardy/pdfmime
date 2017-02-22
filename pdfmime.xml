@@ -186,8 +186,8 @@
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
 	
-	Fragment identifiers appeaar at the end of a URI, and provide a way to
-	reference an anchor or subordinate content within the target
+	Fragment identifiers appear at the end of a URI, and provide a way to
+	reference an anchor to subordinate content within the target
 	of the URI, or additional parameters to the process of opening
 	the identified content. The syntax and semantics of fragment
 	identifiers is referenced in the media type definition.
@@ -195,7 +195,7 @@
 	The specification of fragment
 	identifiers for PDF appeared originally in <xref target='RFC3778'/>, but
 	now will be included in ISO 32000-2 <xref target="ISOPDF2"/>.
-	This section is a brief summary of that material.  Any
+	This section is a summary of that material.  Any
 	disagreements between that document and this should be
 	resolved in favor of the ISO 32000-2 definition, once that has been
 	approved.
@@ -203,7 +203,7 @@
       <t>
 	A fragment identifier for PDF has one or more
 	parameters, separated by the ampersand (&amp;) or pound
-	(#) characer. Each
+	(#) character. Each
 	parameter consists of the parameter name, "=" (equal), and
 	the parameter value; lists of values are comma-separated,
 	strings are %xx percent-hex of UTF-8 encoded.
@@ -221,210 +221,112 @@
 	if it must be first, "last' that it must be last.
       </t>
 
-      <texttable>
-        <preamble>
-          Fragment Identifier Parameters
-        </preamble>
-        <ttcol>Parameter Name</ttcol>
-        <ttcol>Arguments</ttcol>
-	<ttcol>Use</ttcol>
-        <ttcol>Description</ttcol>
-        <c>
-          <spanx style="verb">page</spanx>
-        </c>
-        <c>
-          <spanx style="emph">pageNum</spanx>
-        </c>
-	<c>Alone</c>
-        <c>
-	  pageNum is an integer which refers to the physical
-	  pages of the document, and not any assiged page numbers;
-	  the first page is page 1.
-        </c>
-
-
-        <c>
-          <spanx style="verb">structelem</spanx>
-        </c>
-        <c>
-          <spanx style="emph">structID</spanx>
-        </c>
-	<c>Last</c>
-        <c>Matches the the first 
-the structure ID, is located.  If no 
-		  content is contained within the hierarchy of the 
-		  structure element or the ID does not match a structure 
-		  element, the page number shall be treated as the first 
-		  page within the document.  The structID shall be a byte 
-		  string with URI encoding that will be matched to the ID
-		  key within a StructElem dictionary.
-        </c>
-
-        <c>
-          <spanx style="verb">nameddest</spanx>
-        </c>
-        <c>
-          <spanx style="emph">name</spanx>
-
-        </c>
-        <c>
-	  Named Desinations are a bookmark feature similar to
-	  the "ID" in HTML. The argument is a string
-	  corresponding to the name of a PDF Named Destination.
-	  Named Destinations are unique in a PDF file. Note that
-	  when opening a file a typical viewer navigates to the page
-	  containing the particular named destination.
-	</c>
-	<c>
-	  Alone
-        </c>
-        <c>
-          <spanx style="verb">zoom</spanx>
-        </c>
-        <c>
-          <spanx style="emph">scale
-          scale,left,top</spanx>
-        </c>
-        <c>
-          Open the document with the specified zoom level and
-          optional offset.  The scale argument shall be either
-          an integer or floating point value representing the
-          percentage to which the document should be zoomed,
-          where a value of 100 would correspond to a zoom of
-          100%.  The left and top arguments are optional, but
-          shall both be specified if either is included.  The
-          left and top arguments shall be integer or floating
-          point values representing the offset from the left
-          and top of the page in a coordinate system where 0,0
-          represents the top left corner of the page.
-        </c>
-        <c>
-          <spanx style="verb">view</spanx>
-        </c>
-        <c>
-          <spanx style="emph">keyword,position</spanx>
-        </c>
-        <c>
-          Open the document with the specified destination set
-          as the view.  The arguments shall correspond to
-          those found in <xref target='ISOPDF2'/> 12.3.2.2,
-          "Explicit destinations". The keyword shall correspond
-          to one of the keywords defined in <xref target='ISOPDF2'/>
-          Table 149, "Destination syntax" with appropriate position
-          values.
-        </c>
-        <c>
-          <spanx style="verb">viewrect</spanx>
-        </c>
-        <c>
-          <spanx style="emph">left,top,width,height</spanx>
-S        </c>
-        <c>
-          Open the document with the specified window view
-          rectangle.  The left and top arguments shall be
-          integer or floating point values representing the
-          offset from the left and top of the page in a
-          coordinate system where 0,0 represents the top left
-          corner of the page.  The width and height arguments
-          shall be integer or floating point values
-          representing the width and height of the view.
-        </c>
-        <c>
-          <spanx style="verb">highlight</spanx>
-        </c>
-        <c>
-          <spanx style="emph">left,right,top,bottom</spanx>
-        </c>
-        <c>
-          Open the document with the specified rectangle
-          highlighted.  Each argument shall be an integer or
-          floating point value representing the rectangle
-          measured from the top left corner of the page.
-        </c>
-        <c>
-          <spanx style="verb">comment</spanx>
-        </c>
-        <c>
-          <spanx style="emph">commentID</spanx>
-        </c>
-        <c>
-          Open the document with the specified comment
-          selected.  The commentID shall be the value of an
-          annotation name, which is defined by the NM key in
-          the corresponding annotation dictionary (see 12.5.2
-          "Annotation dictionaries", Table 167).
-          
-          If the comment parameter is combined with another
-          parameter that defines a specific page to be
-          displayed, then the comment parameter shall appear
-          after that in the URI.
-          
-          Note: The NM key is unique to a specific page, but
-          is not guaranteed to be unique to a document.
-          Unless the page on which the comment resides has
-          been selected prior to the comment parameter, the
-          comment will not be selected.
-        </c>
-        <c>
-          <spanx style="verb">search</spanx>
-        </c>
-        <c>
-          <spanx style="emph">wordList</spanx>
-        </c>
-        <c>
-          Open the document and search for one or more words,
-          selecting the first matching word in the document.
-          The wordList argument defines the search words and
-          shall be a string enclosed within quotation marks
-          comprised of individual words separated by space
-          characters.
-          
-          Note that the space characters must be encoded.
-        </c>
-        <c>
-          <spanx style="verb">fdf</spanx>
-        </c>
-        <c>
-          <spanx style="emph">URI</spanx>
-        </c>
-        <c>
-          Open the document and then import the data from the
-          specified FDF or XFDF file (see <xref target='ISOPDF'/>
-	  Section 12.7.8).  The URI shall be either
-          a relative or absolute URI to an FDF or XFDF file.
-          
-          The fdf parameter should be specified as the last
-          parameter to a given URI.
-          
-          Note: The fdf parameter is recommended to be the
-          last parameter so that the document can open
-          directly to the appropriate view.
-        </c>
-        <c>
-          <spanx style="verb">ef</spanx>
-        </c>
-        <c>
-          <spanx style="emph">name</spanx>
-        </c>
-        <c>
-          Open the embedded file contained within the EmbeddedFiles
-		  name tree identified by the name.  The name argument shall
-		  be a byte string used to match a file specification dictionary
-		  in the EmbeddedFiles name tree.
-          
-          It should be noted that security should be strongly considered
-          when opening an embedded file.  When opening a file that is not
-          from a trusted source, a processor may choose to prompt the user
-          or even prevent opening of the file.
-          
-          Any remaining part of the fragment identifier beyond the
-	  "ef" open parameter, applies to the selected embedded file,
-	  e.g., with 
-	  <spanx style="verb">url#ef=example.html&amp;rest-of-fragment</spanx>
-	  the fragment identifier "rest-of-fragment" is interpreted
-	  with respect to the embedded file "example.html".
-        </c>
-      </texttable>
+    <t>
+    <list style="hanging">
+        <t hangText="page=&lt;pageNum&gt;"> <vspace />
+            A specified page number of the document. The argument shall
+            be a positive integer number. The first page in the document
+            has a pageNum value of 1. When used as part of a PDF open parameter,
+            the PDF processor shall open the document to the specified page.
+        </t>
+        <t hangText="nameddest=&lt;name&gt;"> <vspace />
+            A specified named destination (see 12.3.2.4, "Named destinations"
+            in ISO 32000-2 <xref target="ISOPDF2"/>). The argument provided is
+            a string which shall correspond to the name of a destination in
+            the target document.
+            When used as part of a PDF open parameter, the PDF processor shall
+            open the document to the page referred to by the named destination.
+        </t>
+        <t hangText="structelem=&lt;structID&gt;"> <vspace />
+            The structID is a byte string with URI encoding that matches the
+            ID key within a StructElem dictionary of the document. If no content
+            is contained within the hierarchy of the structure element or structID
+            does not match a structure element, the first page in the document
+            shall be identified.
+            When used as part of a PDF open parameter, the PDF processor shall
+            open to the page on which the first content item, hierarchically
+            contained within the structure element identified by the structure ID,
+            is located.
+        </t>
+        <t hangText="comment=&lt;commentID&gt;"> <vspace />
+            The commentID shall be the value of an annotation name, which is
+            defined by the NM key in the corresponding annotation dictionary
+            (see 12.5.2, "Annotation dictionaries" in ISO 32000-2
+            <xref target="ISOPDF2"/>). If the comment parameter is combined
+            with another parameter that defines a specific page to be identified,
+            then the comment parameter shall appear after that in the URI.
+            NOTE: The NM key is unique to a specific page, but is not guaranteed
+            to be unique to a document. Unless the page on which the comment
+            resides has been selected prior to the comment parameter, the comment
+            will not be selected.
+            When used as part of a PDF open parameter, the PDF processor shall
+            open the document with the specified comment selected.
+        </t>
+        <t hangText="ef=&lt;name&gt;"> <vspace />
+            The name argument shall be a byte string used to match a file
+            specification dictionary in the EmbeddedFiles name tree. Any
+            remaining parameters after this parameter apply to the selected
+            embedded file.
+            When used as part of a PDF open parameter, the PDF processor
+            shall open the embedded file contained within the EmbeddedFiles
+            name tree identified by name.
+            Security should be strongly considered when opening an embedded file.
+            When opening a file that is not from a trusted source, a PDF
+            processor may choose to prompt the user or even prevent opening
+            of the file.
+        </t>
+        <t hangText="zoom=&lt;scale&gt;,&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;"> <vspace />
+            Open the document with the specified zoom level and optional offset.
+            The scale argument shall be either an integer or floating point value
+            representing the percentage to which the document should be zoomed,
+            where a value of 100 would correspond to a zoom of 100%.
+            The left and top arguments are optional, but shall both be specified
+            if either is included. The left and top arguments shall be integer or
+            floating point values representing the offset from the left and top of
+            the page in a coordinate system where 0,0 represents the top left
+            corner of the page.
+        </t>
+        <t hangText="view=&lt;keyword&gt;,&lt;position&gt;"> <vspace />
+            Open the document with the specified destination set as the view.
+            The arguments shall correspond to those found in 12.3.2.2,
+            "Explicit destinations" in ISO 32000-2 <xref target="ISOPDF2"/>.
+            The keyword shall correspond to one of the keywords defined in
+            "Table 149: Destination syntax" in ISO 32000-2 <xref target="ISOPDF2"/>
+            with appropriate position values.
+        </t>
+        <t hangText="viewrect=&lt;left&gt;,&lt;top&gt;,&lt;width&gt;,&lt;height&gt;"> <vspace />
+            Open the document with the specified window view rectangle. The left
+            and top arguments shall be integer or floating point values representing
+            the offset from the left and top of the page in a coordinate system
+            where 0,0 represents the top left corner of the page. The width and
+            height arguments shall be integer or floating point values representing
+            the width and height of the view.
+        </t>
+        <t hangText="highlight=&lt;left&gt;,&lt;right&gt;,&lt;top&gt;,&lt;bottom&gt;"> <vspace />
+            Open the document with the specified rectangle highlighted. Each
+            argument shall be an integer or floating point value representing
+            the rectangle measured from the top left corner of the page.
+            The nature of the highlighting is implementation-dependent.
+        </t>
+        <t hangText="search=&lt;wordList&gt;"> <vspace />
+            Open the document and search for one or more words, selecting
+            the first matching word in the document. The wordList argument
+            defines the search words and shall be a string enclosed within
+            quotation marks comprised of individual words separated by space
+            characters.
+            NOTE: Some browsers require that the space characters be encoded
+            appropriately for a URI.
+        </t>
+        <t hangText="fdf=&lt;URI&gt;"> <vspace />
+            Open the document and then import the data from the specified FDF
+            or XFDF file. The URI shall be either a relative or absolute URI
+            to an FDF or XFDF file.
+            The fdf parameter should be specified as the last parameter to a given URI.
+            NOTE: The fdf parameter is recommended to be the last parameter
+            so that the document can open directly to the appropriate view.
+        </t>
+    </list>
+    </t>
     </section>
     
     <section title='Subset Standards'>
