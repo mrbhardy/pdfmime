@@ -215,27 +215,18 @@
 	and to the right from the upper-left corner); see
 	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
-      <t>
-	THE "Use" column describes how the parameter appears
-	with others: "alone" means it doesn't combine; "first"
-	if it must be first, "last' that it must be last.
-      </t>
-
     <t>
     <list style="hanging">
         <t hangText="page=&lt;pageNum&gt;"> <vspace />
             A specified page number of the document. The argument shall
             be a positive integer number. The first page in the document
-            has a pageNum value of 1. When used as part of a PDF open parameter,
-            the PDF processor shall open the document to the specified page.
+            has a pageNum value of 1.
         </t>
         <t hangText="nameddest=&lt;name&gt;"> <vspace />
             A specified named destination (see 12.3.2.4, "Named destinations"
             in ISO 32000-2 <xref target="ISOPDF2"/>). The argument provided is
             a string which shall correspond to the name of a destination in
             the target document.
-            When used as part of a PDF open parameter, the PDF processor shall
-            open the document to the page referred to by the named destination.
         </t>
         <t hangText="structelem=&lt;structID&gt;"> <vspace />
             The structID is a byte string with URI encoding that matches the
@@ -243,10 +234,6 @@
             is contained within the hierarchy of the structure element or structID
             does not match a structure element, the first page in the document
             shall be identified.
-            When used as part of a PDF open parameter, the PDF processor shall
-            open to the page on which the first content item, hierarchically
-            contained within the structure element identified by the structure ID,
-            is located.
         </t>
         <t hangText="comment=&lt;commentID&gt;"> <vspace />
             The commentID shall be the value of an annotation name, which is
@@ -259,14 +246,13 @@
             to be unique to a document. Unless the page on which the comment
             resides has been selected prior to the comment parameter, the comment
             will not be selected.
-            When used as part of a PDF open parameter, the PDF processor shall
-            open the document with the specified comment selected.
         </t>
         <t hangText="ef=&lt;name&gt;"> <vspace />
-            The name argument shall be a byte string used to match a file
+            The name argument shall be a string used to match a file
             specification dictionary in the EmbeddedFiles name tree. Any
             remaining parameters after this parameter apply to the selected
             embedded file.
+            **REWRITE**
             When used as part of a PDF open parameter, the PDF processor
             shall open the embedded file contained within the EmbeddedFiles
             name tree identified by name.
@@ -274,6 +260,7 @@
             When opening a file that is not from a trusted source, a PDF
             processor may choose to prompt the user or even prevent opening
             of the file.
+            **END REWRITE**
         </t>
         <t hangText="zoom=&lt;scale&gt;,&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;"> <vspace />
             Open the document with the specified zoom level and optional offset.
