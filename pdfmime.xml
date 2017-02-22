@@ -185,85 +185,98 @@
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
-	A set of fragment identifiers <xref target='RFC3986'/> and
-	their handling are defined in ISO 32000-2 <xref
-	target="ISOPDF2"/>.  This section summarizes that material;
-	any disagreements between that document and this should be
-	resolved in favor of the ISO definition, once that has been
+	
+	Fragment identifiers appeaar at the end of a URI, and provide a way to
+	reference an anchor or subordinate content within the target
+	of the URI, or additional parameters to the process of opening
+	the identified content. The syntax and semantics of fragment
+	identifiers is referenced in the media type definition.
+
+	The specification of fragment
+	identifiers for PDF appeared originally in <xref target='RFC3778'/>, but
+	now will be included in ISO 32000-2 <xref target="ISOPDF2"/>.
+	This section is a brief summary of that material.  Any
+	disagreements between that document and this should be
+	resolved in favor of the ISO 32000-2 definition, once that has been
 	approved.
       </t>
       <t>
-          A fragment identifier is comprised of one or more
-          parameters separated
-          by the AMPERSAND (&amp;)  character.  Traditionally,
-          these parameters have been used as open actions with each
-          parameter implying an action to be performed on the
-          document and providing values to be used for that
-          action; the values for a parameter are introduced
-          by an EQUAL SIGN (=) and separated by a COMMA (,);
-          values which are strings appear in the fragment
-          identifier using URI's percent-hex escaping --
-          spaces, reserved and non-ASCII strings are
-          included by %nn encoding the UTF-8 of each character.
-          Actions shall be processed and executed from left to
-          right as they appear in the character string that
-          makes up the fragment identifier.
+	A fragment identifier for PDF has one or more
+	parameters, separated by the ampersand (&amp;) or pound
+	(#) characer. Each
+	parameter consists of the parameter name, "=" (equal), and
+	the parameter value; lists of values are comma-separated,
+	strings are %xx percent-hex of UTF-8 encoded.
       </t>
       <t>
-	The parameters listed in this section
-	operate on the document at the point it is opened;
-	for this reason they are sometimes referred to as
-	PDF open parameters.  The fragment identifier should
-	be processed immediately after document-specified open
-	parameters have been processed.
-      </t>
-      <t>
-          In addition to being used as open parameters, many of these
-          fragment identifiers can alternatively be used to identify
-          an item of content within a document. When used for this
-          purpose the action shall be ignored, but the content that
-          was the target of the action (or contained within a bounding
-          box defined by the action) shall be identified. One common use
-          case for this type of processing is in identifying the target of
-          linked data.
-      </t>
-      <t>
-        The table below lists the PDF open parameters relevant
-        to PDF.  All coordinate values (left, right, top, and
+        All coordinate values (left, right, top, and
         bottom) are expressed in the default user space
         coordinate system (1/72 of an inch measured down
 	and to the right from the upper-left corner); see
 	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
+      <t>
+	THE "Use" column describes how the parameter appears
+	with others: "alone" means it doesn't combine; "first"
+	if it must be first, "last' that it must be last.
+      </t>
+
       <texttable>
         <preamble>
-          PDF Open Parameters
+          Fragment Identifier Parameters
         </preamble>
         <ttcol>Parameter Name</ttcol>
         <ttcol>Arguments</ttcol>
+	<ttcol>Use</ttcol>
         <ttcol>Description</ttcol>
-        <c>
-          <spanx style="verb">nameddest</spanx>
-        </c>
-        <c>
-          <spanx style="emph">name</spanx>
-        </c>
-        <c>
-          Open the document to the specified named
-          destination.  The argument provided is a string
-          which shall correspond to the name of a destination
-          in the target document.
-        </c>
         <c>
           <spanx style="verb">page</spanx>
         </c>
         <c>
           <spanx style="emph">pageNum</spanx>
         </c>
+	<c>Alone</c>
         <c>
-          Open the document to the specified page number.  The
-          argument shall be a positive integer number.  The
-          first page in the document has a pageNum value of 1.
+	  pageNum is an integer which refers to the physical
+	  pages of the document, and not any assiged page numbers;
+	  the first page is page 1.
+        </c>
+
+
+        <c>
+          <spanx style="verb">structelem</spanx>
+        </c>
+        <c>
+          <spanx style="emph">structID</spanx>
+        </c>
+	<c>Last</c>
+        <c>Matches the the first 
+the structure ID, is located.  If no 
+		  content is contained within the hierarchy of the 
+		  structure element or the ID does not match a structure 
+		  element, the page number shall be treated as the first 
+		  page within the document.  The structID shall be a byte 
+		  string with URI encoding that will be matched to the ID
+		  key within a StructElem dictionary.
+        </c>
+
+        <c>
+          <spanx style="verb">nameddest</spanx>
+        </c>
+        <c>
+          <spanx style="emph">name</spanx>
+
+        </c>
+        <c>
+	  Named Desinations are a bookmark feature similar to
+	  the "ID" in HTML. The argument is a string
+	  corresponding to the name of a PDF Named Destination.
+	  Named Destinations are unique in a PDF file. Note that
+	  when opening a file a typical viewer navigates to the page
+	  containing the particular named destination.
+	</c>
+	<c>
+	  Alone
         </c>
         <c>
           <spanx style="verb">zoom</spanx>
@@ -305,7 +318,7 @@
         </c>
         <c>
           <spanx style="emph">left,top,width,height</spanx>
-        </c>
+S        </c>
         <c>
           Open the document with the specified window view
           rectangle.  The left and top arguments shall be
@@ -327,23 +340,6 @@
           highlighted.  Each argument shall be an integer or
           floating point value representing the rectangle
           measured from the top left corner of the page.
-        </c>
-        <c>
-          <spanx style="verb">structelem</spanx>
-        </c>
-        <c>
-          <spanx style="emph">structID</spanx>
-        </c>
-        <c>
-          Open to the page on which the first content item, 
-		  hierarchically contained within the structure element 
-		  identified by the structure ID, is located.  If no 
-		  content is contained within the hierarchy of the 
-		  structure element or the ID does not match a structure 
-		  element, the page number shall be treated as the first 
-		  page within the document.  The structID shall be a byte 
-		  string with URI encoding that will be matched to the ID
-		  key within a StructElem dictionary.
         </c>
         <c>
           <spanx style="verb">comment</spanx>
@@ -532,14 +528,13 @@
 	analysis of media type registrations. <xref target='RFC3778'/>
 	(which this document obsoletes) contained a detailed analysis
 	of some of the security issues for PDF implementations known
-	at the time. While the analysis isn't wrong, the threat
+	at the time. While the analysis isn't necessarily wrong, the threat
 	analysis is much too limited, and the mitigations somewhat out
-	of date. And now there is extensive literature on security
+	of date. There is now extensive literature on security
 	threats involving PDF implementations and how to avoid them,
 	consistent with broad implementation over decades.  We are not
 	registering a new media type but rather making a primarily
-	administrative update.  With those caveats, we retain a more
-	general security considerations statement:
+	administrative update.  With those caveats:
       </t>
       <t>
         The PDF file format allows several constructs which may
