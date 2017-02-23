@@ -179,7 +179,8 @@
 	of the URI, or additional parameters to the process of opening
 	the identified content. The syntax and semantics of fragment
 	identifiers is referenced in the media type definition.
-
+      </t>
+      <t>
 	The specification of fragment
 	identifiers for PDF appeared originally in <xref target='RFC3778'/>, but
 	now will be included in ISO 32000-2 <xref target="ISOPDF2"/>.
@@ -189,35 +190,34 @@
 	approved.
       </t>
       <t>
-	A fragment identifier for PDF has one or more parameters
-	separated by AMPERSAND (&amp;) or POUND (#) character. Each parameter
-	represents either an action to be performed on the document
-	when it is opened or an object within the document. Each
-	parameter consists of the parameter name, EQUAL(=), and the
-	parameter value(s), which are COMMA(,) separated when more
-	than one is required.	Paramater values that are strings may use %xx percent-hex
-	of UTF-8 encoded, to meet the requirements of
-	<xref target="RFC3986"/>.
-	Parameters are processed left to right; and affect
-	either the object selected or the view.
+	A fragment identifier for PDF has one or more parameters,
+	separated by the ampersand (&amp;) or pound (#)
+	character. Each parameter consists of the parameter name, "="
+	(equal), and the parameter value; lists of values are
+	comma-separated, and parameter value strings may be
+	URI-encoded (<xref target='RFC3986'/>).
+	Parameters are processed left to right.  
       </t>
       <t>
-        Coordinate values (left, right, top, and
-        bottom) are expressed in the default user space
-        coordinate system (1/72 of an inch measured down
-	and to the right from the upper-left corner); see
-	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
+        Coordinate values (such as &lt;left&gt;, &lt;right&gt;,
+        &lt;width&gt;) are expressed in the default user space
+        coordinate system of the document: 1/72 of an inch
+        measured down and to the right from the upper-left corner
+	of the (current) page. (<xref target="ISOPDF2" /> 8.3.2.3 "User Space")
       </t>
       <t>
+	The following parameters identify subordinate content
+	of a PDF file, but also may be used to set the document view
+	to make the (start of) the identified content visible:
+	
       <list style="hanging">
-        <t hangText="page=&lt;pagenum&gt;"> <vspace />
+        <t hangText="page=&lt;pageNum&gt;"> <vspace />
         Identifies a specified (physical) page; the first page in the document
-        has a pagenum value of 1.
+        has a pageNum value of 1.
         </t>
 
         <t hangText="nameddest=&lt;name&gt;"> <vspace />
-        Identifies a named destination (see 12.3.2.4, "Named destinations"
-        in ISO 32000-2 <xref target="ISOPDF2"/>).
+        Identifies a named destination (<xref target="ISOPDF2"/> 12.3.2.4 "Named destinations").
         </t>
 
         <t hangText="structelem=&lt;structID&gt;"> <vspace />
@@ -229,11 +229,10 @@
         <t hangText="comment=&lt;commentID&gt;"> <vspace />
         The commentID is the value of an annotation name, which is
             defined by the NM key in the corresponding annotation dictionary
-	    (of the selected page; 
-            see 12.5.2, "Annotation dictionaries" in ISO 32000-2
-            <xref target="ISOPDF2"/>). 
+	    (of the selected page. (<xref target="ISOPDF2"/>
+            12.5.2 "Annotation dictionaries")
         </t>
-
+	
         <t hangText="ef=&lt;name&gt;"> <vspace />
 	Identifies the embedded file where the parameter
 	string &lt;name&gt; matches a file
@@ -242,7 +241,9 @@
 	If the "ef" parameter is not at the end of the fragment
 	identifier, then the rest of the fragment identifier (after
 	the ampersand or hash delimiter) is applied to the embedded
-	file according to its own media type.
+	file according to its own media type. This allows
+	identification of content within the embedded file
+	(which itself might be a PDF file).
 	</t>
 	<t>NOTE: When opening a PDF file that is not from a
 	trusted source, processor may choose to prompt the user or
@@ -250,31 +251,28 @@
         </t>
       </list>
       </t>
-      <t>These fragment identifier parameters operate
-      on the document at the point it is opened.
+      <t>These parameters also operate on the view of
+      the PDF document when it is opened. 
       <list style="hanging">
 	<t hangText="zoom=&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;"><vspace /> 
 	&lt;scale&gt; is the percentage to which the document should
 	be zoomed, where a value of 100 correspond to a zoom of 100%.
-	&lt;left&gt; and &lt;top&gt; are measured from the top left
-	corner of the page, independent of the size of the page; they
-	are optional, but both must be specified if either is
-	included.
+	&lt;left&gt; and &lt;top&gt; are optional, but both must be
+	specified if either is included.
         </t>
 
         <t hangText="view=&lt;keyword&gt;,&lt;position&gt;"> <vspace />
-            Open the document with the specified destination set as the view.
-            The arguments correspond to those found in 12.3.2.2,
-            "Explicit destinations" in ISO 32000-2 <xref target="ISOPDF2"/>.
-            The keyword correspond to one of the keywords defined in
-            "Table 149: Destination syntax" in ISO 32000-2 <xref target="ISOPDF2"/>
-            with appropriate position values.
+        The arguments correspond to those found in <xref target="ISOPDF2"/> 12.3.2.2
+        "Explicit destinations". 
+        keyword is one of the keywords defined in
+        <xref target="ISOPDF2"/> "Table 149: Destination syntax"
+        with appropriate position values.
         </t>
         <t hangText="viewrect=&lt;left&gt;,&lt;top&gt;,&lt;width&gt;,&lt;height&gt;"> <vspace />
-            Open the document with the specified window view rectangle.
+            Set the view rectangle.
         </t>
         <t hangText="highlight=&lt;left&gt;,&lt;right&gt;,&lt;top&gt;,&lt;bottom&gt;"> <vspace />
-            Open the document with the specified rectangle highlighted.
+            Highlight the specified rectangle.
         </t>
         <t hangText="search=&lt;wordList&gt;"> <vspace />
             Open the document and search for one or more words, selecting
@@ -284,11 +282,9 @@
 	    the space character (or %20).
         </t>
         <t hangText="fdf=&lt;URI&gt;"> <vspace />
-            Open the document and then import the data from the specified FDF
-            or XFDF file. The URI is either a relative or absolute URI
-            to an FDF or XFDF file.
-            The fdf parameter should be specified as the last parameter to a given URI.
-	    
+	  Imports data into PDF form fields. The URI is either a relative or absolute URI
+          to an FDF or XFDF file. 
+          The fdf parameter should be specified as the last parameter to a given URI.
         </t>
     </list>
     </t>
@@ -307,7 +303,7 @@
             years and has several published parts, the most recently
             released being part 8, specifying different levels of
             conformance: PDF/X-1a:2001, PDF/X-3:2002, PDF/X-1a:2003,
-            PDF/X-3:2003, PDF/X-4, PDF/X-4p, PDF/X-5, PDF/X-5g,
+            PDF/X-3:2003, PDF/X-4, PDF/X-4p, PDF/X-5g,
             PDF/X-5pg and PDF/X-5n.
           </t>
           <t>
