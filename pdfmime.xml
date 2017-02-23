@@ -137,17 +137,6 @@
 	the inclusion of document and object-level metadata through
 	the eXtensible Metadata Platform<xref target='XMP'/>.
       </t>
-      <!-- 
-	Additionally, PDF reduces the
-	complexity of processing content to improve performance
-	for interactive viewing.  In addition to the rendering
-	capabilities, PDF also includes objects, such as
-	hypertext links and annotations, that are not part of
-	the page itself, but are useful for navigation, building
-	collections of related documents and for reviewing and
-	commenting on documents.
-      -->
-
     </section>
     <section title='History'>
       <t>
@@ -185,7 +174,6 @@
     </section>
     <section title='Fragment Identifiers' anchor='fragments'>
       <t>
-	
 	Fragment identifiers appear at the end of a URI, and provide a way to
 	reference an anchor to subordinate content within the target
 	of the URI, or additional parameters to the process of opening
@@ -201,112 +189,103 @@
 	approved.
       </t>
       <t>
-	A fragment identifier for PDF has one or more
-	parameters, separated by the ampersand (&amp;) or pound
-	(#) character. Each
-	parameter consists of the parameter name, "=" (equal), and
-	the parameter value; lists of values are comma-separated,
-	strings are %xx percent-hex of UTF-8 encoded.
+	A fragment identifier for PDF has one or more parameters
+	separated by AMPERSAND (&amp;) or POUND (#) character. Each parameter
+	represents either an action to be performed on the document
+	when it is opened or an object within the document. Each
+	parameter consists of the parameter name, EQUAL(=), and the
+	parameter value(s), which are COMMA(,) separated when more
+	than one is required.	Paramater values that are strings may use %xx percent-hex
+	of UTF-8 encoded, to meet the requirements of
+	<xref target="RFC3986"/>.
+	Parameters are processed left to right; and affect
+	either the object selected or the view.
       </t>
       <t>
-        All coordinate values (left, right, top, and
+        Coordinate values (left, right, top, and
         bottom) are expressed in the default user space
         coordinate system (1/72 of an inch measured down
 	and to the right from the upper-left corner); see
 	<xref target="ISOPDF" /> Section 8.3.2.3 "User Space".
       </t>
-    <t>
-    <list style="hanging">
-        <t hangText="page=&lt;pageNum&gt;"> <vspace />
-            A specified page number of the document. The argument shall
-            be a positive integer number. The first page in the document
-            has a pageNum value of 1.
+      <t>
+      <list style="hanging">
+        <t hangText="page=&lt;pagenum&gt;"> <vspace />
+        Identifies a specified (physical) page; the first page in the document
+        has a pagenum value of 1.
         </t>
+
         <t hangText="nameddest=&lt;name&gt;"> <vspace />
-            A specified named destination (see 12.3.2.4, "Named destinations"
-            in ISO 32000-2 <xref target="ISOPDF2"/>). The argument provided is
-            a string which shall correspond to the name of a destination in
-            the target document.
+        Identifies a named destination (see 12.3.2.4, "Named destinations"
+        in ISO 32000-2 <xref target="ISOPDF2"/>).
         </t>
+
         <t hangText="structelem=&lt;structID&gt;"> <vspace />
-            The structID is a byte string with URI encoding that matches the
-            ID key within a StructElem dictionary of the document. If no content
-            is contained within the hierarchy of the structure element or structID
-            does not match a structure element, the first page in the document
-            shall be identified.
+	structID is a byte string with URI encoding;
+	identifies the structure element with ID key
+	within a StructElem dictionary of the document.
         </t>
+
         <t hangText="comment=&lt;commentID&gt;"> <vspace />
-            The commentID shall be the value of an annotation name, which is
+        The commentID is the value of an annotation name, which is
             defined by the NM key in the corresponding annotation dictionary
-            (see 12.5.2, "Annotation dictionaries" in ISO 32000-2
-            <xref target="ISOPDF2"/>). If the comment parameter is combined
-            with another parameter that defines a specific page to be identified,
-            then the comment parameter shall appear after that in the URI.
-            NOTE: The NM key is unique to a specific page, but is not guaranteed
-            to be unique to a document. Unless the page on which the comment
-            resides has been selected prior to the comment parameter, the comment
-            will not be selected.
+	    (of the selected page; 
+            see 12.5.2, "Annotation dictionaries" in ISO 32000-2
+            <xref target="ISOPDF2"/>). 
         </t>
+
         <t hangText="ef=&lt;name&gt;"> <vspace />
-            The name argument shall be a string used to match a file
-            specification dictionary in the EmbeddedFiles name tree. Any
-            remaining parameters after this parameter apply to the selected
-            embedded file.
-            **REWRITE**
-            When used as part of a PDF open parameter, the PDF processor
-            shall open the embedded file contained within the EmbeddedFiles
-            name tree identified by name.
-            Security should be strongly considered when opening an embedded file.
-            When opening a file that is not from a trusted source, a PDF
-            processor may choose to prompt the user or even prevent opening
-            of the file.
-            **END REWRITE**
+	Identifies the embedded file where the parameter
+	string &lt;name&gt; matches a file
+        specification dictionary in the EmbeddedFiles name tree.
+
+	If the "ef" parameter is not at the end of the fragment
+	identifier, then the rest of the fragment identifier (after
+	the ampersand or hash delimiter) is applied to the embedded
+	file according to its own media type.
+	</t>
+	<t>NOTE: When opening a PDF file that is not from a
+	trusted source, processor may choose to prompt the user or
+	even prevent opening of the file.
         </t>
-        <t hangText="zoom=&lt;scale&gt;,&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;"> <vspace />
-            Open the document with the specified zoom level and optional offset.
-            The scale argument shall be either an integer or floating point value
-            representing the percentage to which the document should be zoomed,
-            where a value of 100 would correspond to a zoom of 100%.
-            The left and top arguments are optional, but shall both be specified
-            if either is included. The left and top arguments shall be integer or
-            floating point values representing the offset from the left and top of
-            the page in a coordinate system where 0,0 represents the top left
-            corner of the page.
+      </list>
+      </t>
+      <t>These fragment identifier parameters operate
+      on the document at the point it is opened.
+      <list style="hanging">
+	<t hangText="zoom=&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;"><vspace /> 
+	&lt;scale&gt; is the percentage to which the document should
+	be zoomed, where a value of 100 correspond to a zoom of 100%.
+	&lt;left&gt; and &lt;top&gt; are measured from the top left
+	corner of the page, independent of the size of the page; they
+	are optional, but both must be specified if either is
+	included.
         </t>
+
         <t hangText="view=&lt;keyword&gt;,&lt;position&gt;"> <vspace />
             Open the document with the specified destination set as the view.
-            The arguments shall correspond to those found in 12.3.2.2,
+            The arguments correspond to those found in 12.3.2.2,
             "Explicit destinations" in ISO 32000-2 <xref target="ISOPDF2"/>.
-            The keyword shall correspond to one of the keywords defined in
+            The keyword correspond to one of the keywords defined in
             "Table 149: Destination syntax" in ISO 32000-2 <xref target="ISOPDF2"/>
             with appropriate position values.
         </t>
         <t hangText="viewrect=&lt;left&gt;,&lt;top&gt;,&lt;width&gt;,&lt;height&gt;"> <vspace />
-            Open the document with the specified window view rectangle. The left
-            and top arguments shall be integer or floating point values representing
-            the offset from the left and top of the page in a coordinate system
-            where 0,0 represents the top left corner of the page. The width and
-            height arguments shall be integer or floating point values representing
-            the width and height of the view.
+            Open the document with the specified window view rectangle.
         </t>
         <t hangText="highlight=&lt;left&gt;,&lt;right&gt;,&lt;top&gt;,&lt;bottom&gt;"> <vspace />
-            Open the document with the specified rectangle highlighted. Each
-            argument shall be an integer or floating point value representing
-            the rectangle measured from the top left corner of the page.
-            The nature of the highlighting is implementation-dependent.
+            Open the document with the specified rectangle highlighted.
         </t>
         <t hangText="search=&lt;wordList&gt;"> <vspace />
             Open the document and search for one or more words, selecting
-            the first matching word in the document. The wordList argument
-            defines the search words and shall be a string enclosed within
-            quotation marks comprised of individual words separated by space
-            characters.
-            NOTE: Some browsers require that the space characters be encoded
-            appropriately for a URI.
+            the first matching word in the document. wordList
+            is a string enclosed in
+            quotation marks where individual words are separated by
+	    the space character (or %20).
         </t>
         <t hangText="fdf=&lt;URI&gt;"> <vspace />
             Open the document and then import the data from the specified FDF
-            or XFDF file. The URI shall be either a relative or absolute URI
+            or XFDF file. The URI is either a relative or absolute URI
             to an FDF or XFDF file.
             The fdf parameter should be specified as the last parameter to a given URI.
             NOTE: The fdf parameter is recommended to be the last parameter
