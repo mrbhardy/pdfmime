@@ -10,7 +10,7 @@
 <?rfc inline='yes'?>
 <?rfc-ext parse-xml-in-artwork='yes' ?>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
-<rfc docName="draft-hardy-pdf-mime-04" category="info" obsoletes='3778'>
+<rfc docName="draft-hardy-pdf-mime-05" category="info" obsoletes='3778'>
   <front>
     <title abbrev="application/pdf">The application/pdf Media
     Type</title>
@@ -288,8 +288,7 @@
             or XFDF file. The URI is either a relative or absolute URI
             to an FDF or XFDF file.
             The fdf parameter should be specified as the last parameter to a given URI.
-            NOTE: The fdf parameter is recommended to be the last parameter
-            so that the document can open directly to the appropriate view.
+	    
         </t>
     </list>
     </t>
