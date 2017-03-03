@@ -467,8 +467,8 @@ From RFC 3778:
           </t>
           <t>
             A PDF file may refer to other PDF files for portions of
-            content.  PDF processors are expected to find these
-            external files and load them in order to display the
+            content.  PDF processors may be expected to find and use these
+            external files when processing the
             document.
 
 <!-- [rfced] Section 7:  Will "in order to display the document" be
@@ -479,6 +479,7 @@ Original (the previous sentence is included for context):
  o  PDF file may refer to other PDF files for portions of content.
     PDF processors are expected to find these external files and load
     them in order to display the document. -->
+<!-- [lmm] broaden where security consideration applies -->
 
           </t>
 
@@ -548,9 +549,8 @@ Original (the previous sentence is included for context):
         target='compat'/> of this document.
       </t>
       <t>
-        Published specification: ISO&nbsp;32000-1:2008&nbsp;(PDF 1.7) <xref
-	target="ISOPDF"/>.  ISO&nbsp;32000-2 (PDF 2.0)
-        <xref target='ISOPDF2'/>.
+        Published specification: ISO&nbsp;32000-2 (PDF 2.0)
+        <xref target='ISOPDF2'/> is the most recent.
 
 <!-- [rfced] Section 8:  Please let us know if  "Published specification"
 should reflect PDF 2.0 only. 
@@ -561,6 +561,7 @@ Original:
 
 Perhaps: 
  Published specification: ISO 32000-2 (PDF 2.0) [ISOPDF2]. -->
+<!-- [lmm] use PDF 2 spec only -->
 
       </t>
       <t>
@@ -581,8 +582,8 @@ Perhaps:
       </t>
       <t>
         Magic number(s): All PDF files start with the characters
-        '%PDF-' followed by the PDF version number, e.g., "%PDF-1.7".
-        These characters are in US-ASCII encoding.
+        "%PDF-" followed by the PDF version number, e.g., "%PDF-1.7"
+	or "%PDF-2.0". These characters are in US-ASCII encoding.
 
 <!-- [rfced] Section 8:  '%PDF-' is the only single-quoted item
 in this document.  Is the distinction needed, or should this item
@@ -597,12 +598,15 @@ Original:
  followed by the PDF version number, e.g., "%PDF-1.7".  These
  characters are in US-ASCII encoding. -->
 
+<!-- [lmm] fixed -->
+
+
       </t>
       <t>
         File extension(s): .pdf
       </t>
       <t>
-        Macintosh file type code(s): "PDF"
+        Macintosh file type code(s): "PDF "
 
 <!-- [rfced] Section 8:  We removed the space between "PDF" and
 the closing quote.  Please let us know if the space should be
@@ -613,6 +617,8 @@ Original:
 
 Changed to:
  Macintosh file type code(s): "PDF" -->
+
+<!-- [lmm] space belongs -->
 
       </t>
     </list></t>
@@ -677,7 +683,9 @@ references.
           <date year="2008"/>
         </front>
         <seriesInfo name="ISO" value="32000-1:2008"/>
-        <annotation>Also available free from Adobe.</annotation> 
+        <!-- [lmm] comment out
+	     <annotation>Also available free from Adobe.</annotation> 
+	-->
       </reference>
 
       <reference anchor="ISOPDF2">
@@ -777,11 +785,14 @@ Original:
           <date year="2012"/>
         </front>
         <seriesInfo name="ISO" value="16684-1"/>
+	<!-- [lmm] comment out
         <annotation>Not available for free, but there are a
         number of descriptive resources, e.g., 
         <eref
 	    target="http://en.wikipedia.org/wiki/Extensible_Metadata_Platform"/>. 
         </annotation>
+	-->
+	
       </reference>
 
       <reference anchor="PS" target="https://www.adobe.com/products/postscript/pdfs/PLRM.pdf">
