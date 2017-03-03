@@ -355,7 +355,7 @@ From RFC 3778:
             PDF/X-5pg, and PDF/X-5n.
           </t>
           <t>
-            PDF/A, initially released in 2005, specifies how to use
+            PDF/A, <xref target="ISOPDFA"/> initially released in 2005, specifies how to use
             PDF for long-term preservation (archiving) of electronic
             documents. It prohibits PDF features that are not well
             suited to long-term archiving of documents, including
@@ -726,6 +726,8 @@ Original:
  [ISOPDFX]  ISO, "Graphic technology - Prepress digital data exchange
             using PDF - Part 8: Partial exchange of printing data
             using PDF 1.6 (PDF/X-5)", ISO 15930-8:2008, 2008. -->
+
+<!-- [lmm] the link is more historical, so leave it -->
 
       <reference anchor="ISOPDFA">
           <front>
