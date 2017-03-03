@@ -112,8 +112,7 @@ title) for use on http://www.rfc-editor.org/search -->
         This document is intended to provide updated information
         on the registration of the MIME Media Type
         <spanx style="verb">application/pdf</spanx> for documents
-        defined in the PDF <xref target='ISOPDF'/>, or
-        "Portable Document Format", syntax.
+        in the PDF (Portable Document Format) syntax.
 
 <!-- [rfced] Sections 1 and 5:  Because we are planning to publish
 this document when Normative Reference [ISOPDF2] is also published,
@@ -151,20 +150,22 @@ Original:
         model has been defined for interacting with PDF documents.
       </t>
 
+      <!-- [lmm] clarify relation to PS -->
       <t>
-        PDF used the imaging model of the PostScript <xref target="PS"/>
-        page description language to render complex text, images, and
+        The imaging model for PDF was based on the PostScript <xref target="PS"/>
+        page description language, used to render complex text, images, and
         graphics in a device&nbhy;independent and
         resolution-independent manner. 
       </t>
 
+      <!-- [lmm] eXtensible not an error -->
       <t>
         PDF supports encryption and digital signatures.  The
         encryption capability is combined with access control
         information to facilitate management of the
         functionality available to the recipient.  PDF supports
         the inclusion of document and object-level metadata through
-        the Extensible Metadata Platform <xref target='XMP'/>.
+        the eXtensible Metadata Platform <xref target='XMP'/>.
       </t>
     </section>
     <section title='History'>
@@ -175,11 +176,11 @@ Original:
         format for capturing and exchanging formatted documents
         electronically across the Web, via email and virtually every
         other document-exchange mechanism.  In 2008, PDF 1.7 was
-        published as an ISO standard <xref target='ISOPDF'/>,
-        ISO&nbsp;32000-1:2008.  It was adopted using the ISO
-        Fast-Track process and is technically identical to Adobe
-        Portable Document Format version 1.7 <xref target='AdobePDF'/>
-        as referenced by <xref target='RFC3778'/>.
+	adopted as ISO&nbsp;32000-1:2008 <xref target='ISOPDF'/>,
+	using the ISO "Fast-Track". That specification
+	is technically identical to Adobe
+        Portable Document Format version 1.7 <xref target='AdobePDF'/>.
+
 
 <!-- [rfced] Section 2:  We see that RFC 3778 cites and lists PDF
 version 1.5.  Should either or both of these sentences be updated?
@@ -196,6 +197,8 @@ From RFC 3778:
  [4]   Adobe Systems Incorporated, "PDF Reference, Fourth Edition",
        Version 1.5, August 2003, <http://partners.adobe.com/asn/tech/
        pdf/specifications.jsp>. -->
+
+<!-- [lmm] removed the 'referenced by' and tried to clarify -->
 
       </t>
       <t>
@@ -413,8 +416,11 @@ From RFC 3778:
         they can just ignore features they do not recognize. Even
         so, the older the PDF version produced, the more legacy
         viewers will support that version, but the fewer features will
-        be enabled. See <xref target="ISOPDF"/> Annex I, "PDF Versions
+        be enabled. The <spanx style="verb">application/pdf</spanx>
+	media type is used for all versions.
+	See <xref target="ISOPDF2"/> Annex I, "PDF Versions
         and Compatibility".
+	<!-- [lmm] please verify -->
 
       </t>
     </section>
