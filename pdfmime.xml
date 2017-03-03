@@ -299,7 +299,7 @@ From RFC 3778:
         </t>
       </list>
       </t>
-      <t>These parameters also operate on the view of
+      <t>These parameters operate on the view of
       the PDF document when it is opened:
       <list style="hanging">
         <t hangText="zoom=&lt;scale&gt;,&lt;left&gt;,&lt;top&gt;"><vspace /> 
