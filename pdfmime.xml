@@ -89,7 +89,11 @@
 
 <!-- [rfced] Please insert any keywords (beyond those that appear in the
 title) for use on http://www.rfc-editor.org/search -->
+<!-- [lmm] Added some keywords but would like suggestions for more -->
 
+    <keyword>Portable Document Format</keyword>
+    <keyword>MIME type</keyword>
+    
     <abstract>
       <t>
         The Portable Document Format (PDF) is an ISO standard (ISO
